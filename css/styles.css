@@ -7,6 +7,7 @@
 :root {
     --arcilla: #C45452;
     --logoBackground: #FDFCE7;
+    --footerBackground: #A9110E;
 }
 
 body {
@@ -41,5 +42,39 @@ body {
 }
 
 .menu li a:hover {
-    border-bottom: 2px solid var(--arcilla);
+    border-bottom: 3px solid var(--arcilla);
+}
+
+
+/* footer */
+.footer footer {
+    background-color: var(--footerBackground);
+    padding: 10px 40px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.footer p {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.footer ul {
+    list-style: none;
+    display: flex;
+    gap: 16px;
+}
+
+.footer li i {
+    color: white;
+}
+
+
+/* about */
+.about header {
+    background-color: rgba(196, 84, 82, 0.20);
+    height: 400px;
 }
