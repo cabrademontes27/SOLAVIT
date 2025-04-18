@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --arcilla: #C45452;
+    --logoBackground: #FDFCE7;
+}
+
+body {
+    font-family: 'Gill Sans', sans-serif;
+}
+
+.menu nav {
+    background-color: var(--logoBackground);
+    display: flex;
+    padding: 10px 40px;
+    height: 100px;
+    align-items: center;
+    gap: 30px;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    padding: 0px 30px;
+    gap: 35px;
+    align-items: center;
+}
+
+.menu li a {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+    padding: 10px;
+    position: relative;
+}
+
+.menu li a:hover {
+    border-bottom: 2px solid var(--arcilla);
+}

@@ -1,6 +1,6 @@
 function loadPartial(id, file) {
   fetch(`partials/${file}`)
-    .then((res) => res.text)
+    .then((res) => res.text())
     .then((html) => {
       document.getElementById(id).innerHTML = html;
     });
@@ -8,4 +8,5 @@ function loadPartial(id, file) {
 
 document.addEventListener("DOMContentLoaded", () => {
     loadPartial("header", "header.html")
+    loadPartial("footer", "footer.html")
 })
