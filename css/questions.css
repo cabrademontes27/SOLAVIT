@@ -1,0 +1,40 @@
+@import './constants.css';
+
+#main-content header {
+    text-align: center;
+    background-color: var(--headerBackground);
+    height: 389px;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+#main-content h1 {
+    text-align: center;
+    margin: 30px auto;
+}
+
+#main-content section {
+    text-align: center;
+    line-height: 32px;
+}
+
+#main-content section.questions details {
+    text-align: left;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 12px;
+    background-color: var(--logoBackground);
+    margin: 0 auto 30px;
+    padding: 10px 30px;
+}
+
+#main-content section.questions summary {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 10px;
+}
+
+#main-content section.questions details[open] i {
+    transform: rotate(90deg);
+}

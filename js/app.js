@@ -13,7 +13,7 @@ function loadStylesheet(stylesheet) {
   const link = document.createElement("link");
   link.rel = "stylesheet";
   link.href = `css/${stylesheet}`;
-  link.setAttribute('data-dinamico', 'true');
+  link.setAttribute("data-dinamico", "true");
   document.head.appendChild(link);
 }
 
@@ -22,11 +22,15 @@ function navigateTo() {
 
   switch (hash) {
     case "about-us":
-      loadStylesheet("about_us.css")
+      loadStylesheet("about_us.css");
       loadPartial("main-content", "about_us.html");
       break;
+    case "questions":
+      loadStylesheet("questions.css");
+      loadPartial("main-content", "questions.html");
+      break;
     default:
-      loadPartial("main-content", "home.html")
+      loadPartial("main-content", "home.html");
   }
 }
 
