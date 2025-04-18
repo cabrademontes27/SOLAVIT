@@ -6,11 +6,23 @@ function loadPartial(id, file) {
     });
 }
 
+function loadStylesheet(stylesheet) {
+  const previous = document.querySelector('link[data-dinamico="true"]');
+  if (previous) previous.remove();
+
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = `css/${stylesheet}`;
+  link.setAttribute('data-dinamico', 'true');
+  document.head.appendChild(link);
+}
+
 function navigateTo() {
   const hash = window.location.hash.replace("#", "");
 
   switch (hash) {
     case "about-us":
+      loadStylesheet("about_us.css")
       loadPartial("main-content", "about_us.html");
       break;
     default:

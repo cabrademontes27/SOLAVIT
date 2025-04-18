@@ -1,13 +1,9 @@
+@import './constants.css';
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-:root {
-    --arcilla: #C45452;
-    --logoBackground: #FDFCE7;
-    --footerBackground: #A9110E;
 }
 
 body {
@@ -72,9 +68,10 @@ body {
     color: white;
 }
 
+.about h1 {
+    font-size: medium;
+}
 
-/* about */
-.about header {
-    background-color: rgba(196, 84, 82, 0.20);
-    height: 400px;
+body #main-content {
+    padding: 20px;
 }
