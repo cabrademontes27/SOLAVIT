@@ -39,31 +39,34 @@
     transform: rotate(90deg);
 }
 
-#main-content section div.contact-info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#main-content section.contact {
+    text-align: center;
     gap: 50px;
     padding: 20px;
 }
 
 #main-content section.contact ul {
+    display: flex;
+    flex-direction: column;
     list-style: none;
-    /* remove if map */
-    max-width: 700px;
-    width: 100%;
+    width: 90%;
+    max-width: 750px;
+    margin: 0 auto;
+    gap: 30px;
 }
 
 #main-content section.contact li {
     display: flex;
     align-items: center;
     text-align: left;
-    margin-bottom: 30px;
+    width: 90%;
+    gap: 10px;
 }
 
 #main-content section.contact li div {
     width: 100%;
     max-width: 32px;
+    text-align: center;
 }
 
 #main-content section.contact .map {
