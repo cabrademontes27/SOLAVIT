@@ -28,7 +28,7 @@
   },
   {
     "id": 4,
-    "name": "Artesanía 4",
+    "name": "Artesanía 4 con un nombre algo largo para demostrar el overflow",
     "description": "Una descripcion del producto",
     "images": [
       "images/organizacion/joyero_1.jpg",

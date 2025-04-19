@@ -29,7 +29,7 @@ function renderProducts(products) {
     .map(
       (product) =>
         `
-        <li class="product-card">
+        <li class="product-card" data-id="${product.id}">
           <img src="${product.images[0]}" alt="${product.name}" />
           <h3>${product.name}</h3>
           <p>${product.category}, ${product.subcategory}</p>
@@ -37,6 +37,8 @@ function renderProducts(products) {
         `
     )
     .join("");
+
+  addProductClickEvents(products);
 }
 
 function renderSubcategories(category) {
@@ -55,6 +57,59 @@ function renderSubcategories(category) {
     subNav.style.display = "block";
     addSubcategoryEvents();
   }
+}
+
+function showProductDetail(product) {
+  //product info
+  const sectionTag = document.getElementById("product-info");
+  sectionTag.innerHTML = `
+    <h1>${product.name}</h1>
+    <h2>${product.category}, ${product.subcategory}</h2>
+    <p>${product.description}<p>
+    `;
+
+  // images
+  const images = Array.isArray(product.images)
+    ? product.images
+    : [product.image];
+  let current = 0;
+
+  const imgTag = document.getElementById("slider-image");
+
+  function updateImage() {
+    imgTag.src = images[current];
+  }
+
+  updateImage();
+
+  document.getElementById("next").onclick = () => {
+    current = (current + 1) % images.length;
+    updateImage();
+  };
+
+  document.getElementById("prev").onclick = () => {
+    current = (current - 1 + images.length) % images.length;
+    updateImage();
+  };
+
+  document.getElementById("back-button").onclick = () => {
+    window.location.hash = "products";
+  };
+}
+
+function loadProductDetailById(productId) {
+  fetch("partials/product-detail.html")
+    .then((res) => res.text())
+    .then((html) => {
+      document.getElementById("main-content").innerHTML = html;
+
+      fetch("products.json")
+        .then((res) => res.json())
+        .then((products) => {
+          const product = products.find((product) => product.id == productId);
+          if (product) showProductDetail(product);
+        });
+    });
 }
 
 function addCategoryEvents(products) {
@@ -97,6 +152,15 @@ function addSubcategoryEvents() {
   });
 }
 
+function addProductClickEvents() {
+  document.querySelectorAll(".product-card").forEach((card) => {
+    card.addEventListener("click", () => {
+      const productId = card.dataset.id;
+      window.location.hash = `products/${productId}`;
+    });
+  });
+}
+
 function initProducts(products) {
   renderProducts(products);
   addCategoryEvents(products);
@@ -119,6 +183,14 @@ function loadProducts() {
 function navigateTo() {
   const hash = window.location.hash.replace("#", "");
 
+  // product detail view
+  if (hash.startsWith("products/")) {
+    const productId = hash.split("/")[1];
+    loadStylesheet("product-detail.css");
+    loadProductDetailById(productId);
+    return;
+  }
+
   switch (hash) {
     case "products":
       loadStylesheet("products.css");
@@ -126,7 +198,7 @@ function navigateTo() {
       break;
     case "about-us":
       loadStylesheet("about_us.css");
-      loadPartial("main-content", "about_us.html");
+      loadPartial("main-content", "about-us.html");
       break;
     case "questions":
       loadStylesheet("questions.css");

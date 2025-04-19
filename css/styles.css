@@ -107,3 +107,7 @@ body #main-content h3 {
     font-size: 18px;
     font-weight: 500;
 }
+
+body #main-content button {
+    font-family: "Oswald", sans-serif;
+}
