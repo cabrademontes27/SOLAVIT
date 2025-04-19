@@ -30,7 +30,7 @@ function renderProducts(products) {
       (product) =>
         `
         <li class="product-card">
-          <img src="${product.image}" alt="${product.name}" />
+          <img src="${product.images[0]}" alt="${product.name}" />
           <h3>${product.name}</h3>
           <p>${product.category}, ${product.subcategory}</p>
         </li>
@@ -40,8 +40,8 @@ function renderProducts(products) {
 }
 
 function renderSubcategories(category) {
-  const subList = document.getElementById("subfilter-list");
   const subNav = document.getElementById("subfilter-nav");
+  const subList = document.getElementById("subfilter-list");
 
   subList.innerHTML = "";
 
@@ -51,16 +51,17 @@ function renderSubcategories(category) {
       li.innerHTML = `<a href="#" data-category="${category}" data-subcategory="${subcategory}">${subcategory}</a>`;
       subList.appendChild(li);
     });
+
     subNav.style.display = "block";
-  } else {
-    subNav.style.display = "none";
+    addSubcategoryEvents();
   }
 }
 
 function addCategoryEvents(products) {
-  document.querySelectorAll(".filter-nav a").forEach((link) => {
+  document.querySelectorAll("#filter-nav a").forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
+
       const category = link.dataset.category;
       renderSubcategories(category);
 
@@ -70,6 +71,28 @@ function addCategoryEvents(products) {
           : products.filter((product) => product.category === category);
 
       renderProducts(filterProducts);
+    });
+  });
+}
+
+function addSubcategoryEvents() {
+  document.querySelectorAll("#subfilter-nav a").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      const category = link.dataset.category;
+      const subcategory = link.dataset.subcategory;
+
+      fetch("products.json")
+        .then((res) => res.json())
+        .then((products) => {
+          const filterProducts = products.filter(
+            (product) =>
+              product.category === category &&
+              product.subcategory === subcategory
+          );
+          renderProducts(filterProducts);
+        });
     });
   });
 }

@@ -76,6 +76,7 @@
     height: 250px;
     object-fit: cover;
     background-color: #eee;
+    border-radius: 8px;
 }
 
 #main-content .product-card h3 {

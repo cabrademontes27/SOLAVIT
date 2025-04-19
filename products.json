@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Artesanía 1",
     "description": "Una descripcion del producto",
-    "image": "images/product_1.jpg",
+    "images": ["/images/product_1.jpg"],
     "category": "Decoración",
     "subcategory": "Exterior"
   },
@@ -11,7 +11,10 @@
     "id": 2,
     "name": "Artesanía 2",
     "description": "Una descripcion del producto",
-    "image": "images/product_2.jpg",
+    "images": [
+      "/images/decoracion/interior/decoracion_1.jpg",
+      "/images/decoracion/interior/decoracion_2.jpg"
+    ],
     "category": "Decoración",
     "subcategory": "Interior"
   },
@@ -19,32 +22,23 @@
     "id": 3,
     "name": "Artesanía 3",
     "description": "Una descripcion del producto",
-    "image": "images/product_2.jpg",
+    "images": [
+      "/images/cocina/frutero_1.jpg"
+    ],
     "category": "Cocina",
-    "subcategory": "Comales"
+    "subcategory": "Fruteros"
   },
   {
     "id": 4,
     "name": "Artesanía 4",
     "description": "Una descripcion del producto",
-    "image": "images/product_2.jpg",
-    "category": "Cocina",
-    "subcategory": "Fruteros"
-  },
-  {
-    "id": 5,
-    "name": "Artesanía 5",
-    "description": "Una descripcion del producto",
-    "image": "images/product_2.jpg",
+    "images": [
+      "images/organizacion/joyero_1.jpg",
+      "images/organizacion/joyero_2.jpg",
+      "images/organizacion/joyero_3.jpg",
+      "images/organizacion/joyero_4.jpg"
+    ],
     "category": "Organización",
     "subcategory": "Joyeros"
-  },
-  {
-    "id": 6,
-    "name": "Artesanía 6",
-    "description": "Una descripcion del producto",
-    "image": "images/product_2.jpg",
-    "category": "Decoración",
-    "subcategory": "Interior"
   }
 ]
