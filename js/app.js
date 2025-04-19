@@ -30,6 +30,7 @@ function navigateTo() {
       loadPartial("main-content", "questions.html");
       break;
     default:
+      loadStylesheet("home.css");
       loadPartial("main-content", "home.html");
   }
 }
