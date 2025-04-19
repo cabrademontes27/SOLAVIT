@@ -13,6 +13,38 @@
     "description": "Una descripcion del producto",
     "image": "images/product_2.jpg",
     "category": "Decoración",
-    "subcategory": "Exterior"
+    "subcategory": "Interior"
+  },
+  {
+    "id": 3,
+    "name": "Artesanía 3",
+    "description": "Una descripcion del producto",
+    "image": "images/product_2.jpg",
+    "category": "Cocina",
+    "subcategory": "Comales"
+  },
+  {
+    "id": 4,
+    "name": "Artesanía 4",
+    "description": "Una descripcion del producto",
+    "image": "images/product_2.jpg",
+    "category": "Cocina",
+    "subcategory": "Fruteros"
+  },
+  {
+    "id": 5,
+    "name": "Artesanía 5",
+    "description": "Una descripcion del producto",
+    "image": "images/product_2.jpg",
+    "category": "Organización",
+    "subcategory": "Joyeros"
+  },
+  {
+    "id": 6,
+    "name": "Artesanía 6",
+    "description": "Una descripcion del producto",
+    "image": "images/product_2.jpg",
+    "category": "Decoración",
+    "subcategory": "Interior"
   }
 ]

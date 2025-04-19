@@ -1,7 +1,7 @@
 const subcategories = {
-  decoracion: ["interior", "exterior"],
-  cocina: ["comales", "fruteros"],
-  organizacion: ["joyeros"],
+  Decoración: ["Interior", "Exterior"],
+  Cocina: ["Comales", "Fruteros"],
+  Organización: ["Joyeros"],
 };
 
 function loadPartial(id, file) {
@@ -24,9 +24,18 @@ function loadStylesheet(stylesheet) {
 }
 
 function renderProducts(products) {
-  const div = document.getElementById("product-list");
-  div.innerHTML = products
-    .map((product) => `<h1>${product.name}</h1>`)
+  const productList = document.getElementById("product-list");
+  productList.innerHTML = products
+    .map(
+      (product) =>
+        `
+        <li class="product-card">
+          <img src="${product.image}" alt="${product.name}" />
+          <h3>${product.name}</h3>
+          <p>${product.category}, ${product.subcategory}</p>
+        </li>
+        `
+    )
     .join("");
 }
 
@@ -54,6 +63,13 @@ function addCategoryEvents(products) {
       e.preventDefault();
       const category = link.dataset.category;
       renderSubcategories(category);
+
+      const filterProducts =
+        category === "Todos"
+          ? products
+          : products.filter((product) => product.category === category);
+
+      renderProducts(filterProducts);
     });
   });
 }
