@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Artesanía 1",
     "description": "Una descripcion del producto",
-    "images": ["/images/product_1.jpg"],
+    "images": ["images/product_1.jpg"],
     "category": "Decoración",
     "subcategory": "Exterior"
   },
@@ -12,8 +12,8 @@
     "name": "Artesanía 2",
     "description": "Una descripcion del producto",
     "images": [
-      "/images/decoracion/interior/decoracion_1.jpg",
-      "/images/decoracion/interior/decoracion_2.jpg"
+      "images/decoracion/interior/decoracion_1.jpg",
+      "images/decoracion/interior/decoracion_2.jpg"
     ],
     "category": "Decoración",
     "subcategory": "Interior"
@@ -22,9 +22,7 @@
     "id": 3,
     "name": "Artesanía 3",
     "description": "Una descripcion del producto",
-    "images": [
-      "/images/cocina/frutero_1.jpg"
-    ],
+    "images": ["images/cocina/frutero_1.jpg"],
     "category": "Cocina",
     "subcategory": "Fruteros"
   },
