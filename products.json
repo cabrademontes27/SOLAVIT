@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Artesanía 1",
+    "description": "Una descripcion del producto",
+    "image": "images/product_1.jpg",
+    "category": "Decoración",
+    "subcategory": "Exterior"
+  },
+  {
+    "id": 2,
+    "name": "Artesanía 2",
+    "description": "Una descripcion del producto",
+    "image": "images/product_2.jpg",
+    "category": "Decoración",
+    "subcategory": "Exterior"
+  }
+]

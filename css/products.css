@@ -1,0 +1,9 @@
+@import './constants.css';
+
+#main-content header {
+    text-align: center;
+    background-color: var(--headerBackground);
+    padding: 20px;
+    border-radius: 12px;
+    height: 389px;
+}

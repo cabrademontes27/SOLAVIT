@@ -24,7 +24,7 @@
     max-width: 800px;
     border-radius: 12px;
     background-color: var(--logoBackground);
-    margin: 0 auto 30px;
+    margin: 10px auto 30px;
     padding: 10px 30px;
 }
 
@@ -33,6 +33,12 @@
     align-items: center;
     cursor: pointer;
     gap: 10px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+}
+
+#main-content section.questions p {
+    margin-top: 10px;
 }
 
 #main-content section.questions details[open] i {

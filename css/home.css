@@ -1,10 +1,17 @@
 @import './constants.css';
 
 #main-content header {
-    text-align: center;
-    background-color: var(--headerBackground);
-    padding: 20px;
+    padding: 70px 50px;
     border-radius: 12px;
+    background-image: url("/images/home_header.png"), linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.786));
+    background-size: cover;
+    height: 390px;
+    text-align: left;
+    display: flex;
+    flex-direction: column-reverse;
+    font-family: "DM Serif Text", serif;
+    font-size: 24px;
+    color: white;
 }
 
 #main-content section {
@@ -12,5 +19,6 @@
 }
 
 #main-content section h2 {
+    font-family: "Special Gothic Expanded One", sans-serif;
     margin: 30px 0;
 }
