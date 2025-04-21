@@ -46,20 +46,22 @@
 #main-content .product-info {
     display: flex;
     flex-direction: column;
+    text-align: left;
     gap: 30px;
     width: 100%;
     max-width: 500px;
 }
 
 #main-content .product-info h1 {
-    font-size: 24px;
+    text-align: left;
+    font-size: 32px;
     font-weight: 500;
     margin: 0;
 }
 
 #main-content .product-info h2 {
     font-weight: 400;
-    font-size: 21px;
+    font-size: 24px;
 }
 
 #main-content .product-info p {
