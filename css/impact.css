@@ -1,0 +1,44 @@
+@import './constants.css';
+
+#main-content section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 50px 250px;
+    font-size: 21px;
+    font-weight: normal;
+}
+
+#main-content .info {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    gap: 30px;
+}
+
+#main-content section h1 {
+    font-size: 32px;
+    text-align: left;
+    margin: 0 0;
+}
+
+
+#main-content .images {
+    display: flex;
+    gap: 30px;
+    padding: 50px;
+    justify-content: center;
+}
+
+#main-content img {
+    width: 500px;
+    height: auto;
+    object-fit: cover;
+    align-items: center;
+}
+
+#main-content .social {
+    background-color: var(--newArcilla);
+    color: white;
+}

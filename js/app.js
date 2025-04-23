@@ -204,6 +204,14 @@ function navigateTo() {
       loadStylesheet("questions.css");
       loadPartial("main-content", "questions.html");
       break;
+    case "creators":
+      loadStylesheet("creators.css");
+      loadPartial("main-content", "creators.html");
+      break;
+    case "impact":
+      loadStylesheet("impact.css");
+      loadPartial("main-content", "impact.html");
+      break;
     default:
       loadStylesheet("home.css");
       loadPartial("main-content", "home.html");
