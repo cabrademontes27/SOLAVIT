@@ -111,22 +111,20 @@
 }
 
 #main-content .carousel-container {
-    margin: 0 auto;
-    max-width: 1000px;
+    margin-inline: auto;
+    max-width: 950px;
 }
 
 #main-content .carousel {
     display: flex;
-    gap: 30px;
+    gap: 31px;
     overflow-x: auto;
-    scroll-behavior: smooth;
-    max-width: 82%;
+    max-width: 100%;
     align-items: center;
-    margin: 0 auto;
+    margin-inline: auto;
 }
 
-#main-content .carousel img {
-    width: 400px;
-    object-fit: cover;
-    flex-shrink: 0;
+#main-content .carousel-img {
+    min-width: 400px;
+    flex-shrink: 1;
 }
