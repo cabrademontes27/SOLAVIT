@@ -106,7 +106,7 @@
     text-align: left;
 }
 
-#main-content .carrousel {
+#main-content .carousel {
     margin: 0 auto;
     width: 100%;
     max-width: 1030px;
@@ -114,11 +114,12 @@
     align-items: center;
     gap: 30px;
     overflow-x: auto;
+    scroll-behavior: smooth;
 }
 
-#main-content .carrousel img {
-    width: 100%;
-    max-width: 450px;
+#main-content .carousel img {
+    width: 450px;
     height: auto;
     object-fit: cover;
+    flex-shrink: 0;
 }
