@@ -11,23 +11,20 @@ body {
     font-family: "Special Gothic", sans-serif;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 
 .menu {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: white;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .menu nav {
     background-color: var(--newBackground);
     display: flex;
-    padding: 10px 80px;
-    height: 100%;
-    max-height: fit-content;
+    padding: 0.625rem 5rem;
+    width: auto;
     align-items: center;
     justify-content: space-between;
 }
@@ -35,20 +32,27 @@ body {
 .menu ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     padding: 0px 30px;
     gap: 35px;
     align-items: center;
 }
 
-.menu li a {
+.menu a {
     text-transform: uppercase;
     text-decoration: none;
     font-size: 20px;
     font-weight: bold;
     font-family: "Playfair Display", serif;
     color: black;
-    padding: 10px;
-    position: relative;
+    padding: 0.625rem;
+}
+
+.menu a img {
+    display: block;
+    width: 100%;
+    min-width: 100px;
+    max-width: 220px;
 }
 
 .menu li a:hover {
@@ -88,16 +92,17 @@ body {
 }
 
 body #main-content {
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin-inline: auto;
 }
 
 body #main-content h1 {
     font-family: "Oswald", sans-serif;
     text-transform: uppercase;
-    text-align: center;
-    font-size: 24px;
     font-weight: 600;
-    margin: 30px auto;
 }
 
 body #main-content h2 {

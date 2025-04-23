@@ -1,18 +1,23 @@
 @import './constants.css';
 
+#main-content img {
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
 #main-content header {
     padding: 70px 50px;
-    border-radius: 12px;
-    background-image: url("/images/home_header.png"), linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.786));
+    background-image: url("images/placeholder.png"), linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.786));
     background-size: cover;
-    height: 390px;
+    width: 100%;
+    min-height: 390px;
     text-align: left;
     display: flex;
     flex-direction: column-reverse;
     font-family: "DM Serif Text", serif;
     font-size: 32px;
     color: white;
-    margin: 0 auto;
 }
 
 #main-content section {
@@ -45,7 +50,7 @@
     display: flex;
     align-items: center;
     color: white;
-    padding: 30px 250px;
+    padding: 70px;
     gap: 50px;
     font-size: 21px;
     text-align: left;
@@ -55,12 +60,12 @@
 #main-content .creators h1 {
     text-align: left;
     font-size: 32px;
-    margin: 0 0;
 }
 
 #main-content .creators-info {
     display: flex;
     flex-direction: column;
+    max-width: 50%;
     gap: 30px;
 }
 
@@ -75,18 +80,17 @@
     font-size: 19px;
 }
 
-#main-content .creators img {
-    height: 90%;
-    max-height: 450px;
-    width: auto;
-    object-fit: cover;
+#main-content .img-container {
+    max-width: 400px;
 }
 
 #main-content .process {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 50px 250px;
+    padding: 70px;
+    max-width: 80%;
+    margin-inline: auto;
 }
 
 #main-content .process h1 {
@@ -106,20 +110,23 @@
     text-align: left;
 }
 
-#main-content .carousel {
+#main-content .carousel-container {
     margin: 0 auto;
-    width: 100%;
-    max-width: 1030px;
+    max-width: 1000px;
+}
+
+#main-content .carousel {
     display: flex;
-    align-items: center;
     gap: 30px;
     overflow-x: auto;
     scroll-behavior: smooth;
+    max-width: 82%;
+    align-items: center;
+    margin: 0 auto;
 }
 
 #main-content .carousel img {
-    width: 450px;
-    height: auto;
+    width: 400px;
     object-fit: cover;
     flex-shrink: 0;
 }

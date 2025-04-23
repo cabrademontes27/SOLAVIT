@@ -1,85 +1,81 @@
 @import './constants.css';
 
-/* about */
-#main-content header {
-    text-align: center;
-    background-color: var(--headerBackground);
-    padding: 20px;
-    border-radius: 12px;
+#main-content img {
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
 }
 
-#main-content header img {
-    max-width: 1000px;
-    height: auto;
+#main-content header {
+    background-color: var(--headerBackground);
+    display: flex;
+    justify-content: center;
+    padding: 20px;
 }
 
 #main-content section {
-    text-align: center;
     font-size: 18px;
-    max-width: 1420px;
-    margin: 0 auto 100px;
+    margin-inline: auto;
+    margin-top: 30px;
+    max-width: 100%;
+    padding: 10px 70px;
 }
 
-#main-content section img {
-    max-width: 500px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-
-#main-content section h2 {
+#main-content section h1 {
     text-align: left;
-    margin: 30px auto 20px;
+    margin-bottom: 20px;
 }
 
 #main-content section p {
-    width: 100%;
     line-height: 32px;
 }
 
-
-#main-content section.info {
-    text-align: justify;
-    align-items: center;
-    display: flex;
-    gap: 30px;
+#main-content .img-container {
+    max-width: 500px;
+    min-width: 100px;
 }
 
-#main-content section.info div {
-    width: 90%;
+#main-content .info {
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    gap: 50px;
+    margin-bottom: 100px;
+}
+
+#main-content .info-text {
     max-width: 750px;
 }
 
-#main-content section.values ul {
-    list-style: none;
-    text-align: justify;
-    margin: 40px auto 0px;
+#main-content .values {
+    max-width: 100%;
+    margin-bottom: 80px;
 }
 
-#main-content section.values h3 {
+#main-content .values ul {
+    list-style: none;
+    text-align: justify;
+    margin-top: 40px;
+}
+
+#main-content .values h2 {
     font-size: 18px;
+    margin-bottom: 10px;
     font-weight: 500;
 }
 
-#main-content section.values li {
+#main-content .values li {
     display: flex;
-    margin-top: 20px;
     align-items: center;
+    margin-top: 20px;
     gap: 50px;
 }
 
-#main-content section.values li div {
-    width: 90%;
-    max-width: 900px;
+#main-content .value-img {
+    max-width: 250px;
+    min-width: 50px;
 }
 
-#main-content section.values li p {
-    width: 90%;
-    max-width: 1000px;
-}
-
-#main-content section.values img {
-    max-width: 320px;
-    height: auto;
-    display: block;
+#main-content .value-text {
+    max-width: 800px;
 }
