@@ -18,9 +18,59 @@
 
 #main-content section {
     text-align: center;
+    line-height: 32px;
 }
 
 #main-content section h2 {
     font-family: "Special Gothic Expanded One", sans-serif;
     margin: 30px 0;
+}
+
+#main-content .video-process {
+    padding: 30px;
+}
+
+#main-content .video-process h1 {
+    margin: 0;
+}
+
+#main-content .creators {
+    background-color: var(--newArcilla);
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 30px 250px;
+    gap: 50px;
+    font-size: 21px;
+    text-align: left;
+    justify-content: center;
+}
+
+#main-content .creators h1 {
+    text-align: left;
+    font-size: 32px;
+    margin: 0 0;
+}
+
+#main-content .creators-info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#main-content .creators a {
+    width: fit-content;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    background-color: var(--darkBarro);
+    border-radius: 8px;
+    border: none;
+    font-size: 21px;
+}
+
+#main-content .creators img {
+    height: 450px;
+    width: auto;
+    object-fit: cover;
 }

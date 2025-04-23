@@ -182,6 +182,8 @@ function loadProducts() {
 
 function navigateTo() {
   const hash = window.location.hash.replace("#", "");
+  // reset scroll
+  window.scrollTo(0,0); 
 
   // product detail view
   if (hash.startsWith("products/")) {
