@@ -119,12 +119,11 @@
     display: flex;
     gap: 31px;
     overflow-x: auto;
-    max-width: 100%;
     align-items: center;
-    margin-inline: auto;
 }
 
 #main-content .carousel-img {
-    min-width: 400px;
-    flex-shrink: 1;
+    width: 100%;
+    max-width: 400px;
+    flex-shrink: 0.01;
 }
