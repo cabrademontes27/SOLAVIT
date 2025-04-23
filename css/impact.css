@@ -32,7 +32,7 @@
 }
 
 #main-content img {
-    width: 500px;
+    max-width: 450px;
     height: auto;
     object-fit: cover;
     align-items: center;

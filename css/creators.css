@@ -1,0 +1,69 @@
+@import './constants.css';
+
+#main-content section h1 {
+    text-align: left;
+    font-size: 32px;
+    margin: 0 0 30px;
+}
+
+#main-content section p {
+    text-align: justify;
+    font-size: 21px;
+}
+
+#main-content .intro {
+    background-color: var(--newArcilla);
+    color: white;
+    padding: 150px 250px 60px;
+}
+
+
+#main-content .creators {
+    padding: 50px 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#main-content .creators h1 {
+    margin: 0;
+}
+
+#main-content .creators-info {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 100px;
+}
+
+#main-content .creators-info h2 {
+    font-size: 21px;
+}
+
+#main-content .creators-info h3 {
+    font-size: 18px;
+}
+
+#main-content .creators-info p  {
+    font-size: 18px;
+    text-align: left;
+}
+
+#main-content .creators-info div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#main-content .creators-info div div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#main-content .creators-info img {
+    border-radius: 80px;
+    height: 140px;
+    width: 140px;
+    object-fit: cover;
+}
