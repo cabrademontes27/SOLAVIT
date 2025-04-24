@@ -60,16 +60,18 @@ body {
     display: none;
     position: absolute;
     padding-top: 20px;
-    margin-left: -20px;
+    margin-inline: auto;
 }
 
 .submenu-wrapper .submenu {
     background-color: var(--logoBackground);
-    padding: 30px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    border-radius: 12px;
+    border-radius: 8px;
+    align-items: normal;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .submenu-wrapper .submenu li {
@@ -79,6 +81,7 @@ body {
 
 .submenu-wrapper .submenu a {
     padding: 0;
+    font-size: 18px;
 }
 
 .dropdown:hover .submenu-wrapper,
