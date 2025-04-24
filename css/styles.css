@@ -13,32 +13,36 @@ body {
     flex-direction: column;
 }
 
-.menu {
+.header {
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.menu nav {
+.header nav {
     background-color: var(--newBackground);
     display: flex;
-    padding: 0.625rem 5rem;
-    width: auto;
+    flex-wrap: wrap;
+    padding: 10px 100px;
     align-items: center;
     justify-content: space-between;
 }
 
-.menu ul {
+.header ul {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    padding: 0px 30px;
     gap: 35px;
+    padding: 20px;
     align-items: center;
 }
 
-.menu a {
+.header li {
+    margin-inline: auto;
+}
+
+.header a {
     text-transform: uppercase;
     text-decoration: none;
     font-size: 20px;
@@ -48,14 +52,16 @@ body {
     padding: 0.625rem;
 }
 
-.menu a img {
-    display: block;
-    width: 100%;
-    min-width: 100px;
-    max-width: 220px;
+.logo-wrapper {
+    max-width: 200px;
 }
 
-.menu li a:hover {
+.header img {
+    max-width: 100%;
+    display: block;
+}
+
+.header li a:hover {
     border-bottom: 3px solid var(--arcilla);
 }
 
@@ -63,10 +69,12 @@ body {
 /* footer */
 .footer footer {
     background-color: var(--footerBackground);
-    padding: 10px 80px;
-    height: 80px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
+    padding: 20px 80px;
+    min-height: 80px;
     gap: 30px;
     font-size: 18px;
 }

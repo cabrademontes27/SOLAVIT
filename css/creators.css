@@ -13,40 +13,36 @@
 #main-content .intro {
     background-color: var(--newArcilla);
     color: white;
-    padding: 0 100px 50px;
+    padding: 50px;
 }
 
 #main-content .intro-info {
-    max-width: 1400px;
+    max-width: 1200px;
     margin-inline: auto;
-    margin-top: 10%;
 }
 
-#main-content .intro-info h1 {
+#main-content h1 {
     margin-bottom: 20px;
 }
 
 
 #main-content .creators {
-    padding: 50px 100px;
-    max-width: 1400px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+    padding: 50px;
     margin-inline: auto;
 }
 
 #main-content .creators-intro {
-    max-width: 1400px;
+    max-width: 1200px;
 }
 
 #main-content .creators-info {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 50px;
-    padding: 70px;
+    gap: 80px;
+    padding-block: 50px;
     justify-content: center;
+    margin-inline: auto;
 }
 
 #main-content .creators-info h2 {
@@ -62,7 +58,7 @@
     text-align: left;
 }
 
-#main-content .creators-info div {
+#main-content .creator-card {
     display: flex;
     max-width: 300px;
     flex-direction: column;
@@ -70,15 +66,19 @@
     gap: 20px;
 }
 
-#main-content .creators-info div div {
+#main-content .location-info {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-#main-content .creators-info img {
-    border-radius: 80px;
-    height: 140px;
-    width: 140px;
+#main-content .img-container {
+    max-width: 140px;
+    max-height: 140px;
+}
+
+#main-content img {
+    max-width: 100%;
+    display: block;
     object-fit: cover;
 }

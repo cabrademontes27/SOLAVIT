@@ -10,15 +10,15 @@
     background-color: var(--headerBackground);
     display: flex;
     justify-content: center;
+    min-height: 400px;
     padding: 20px;
 }
 
 #main-content section {
-    font-size: 18px;
+    font-size: 21px;
     margin-inline: auto;
     margin-top: 30px;
-    max-width: 100%;
-    padding: 10px 70px;
+    padding: 10px 50px;
 }
 
 #main-content section h1 {
@@ -31,12 +31,13 @@
 }
 
 #main-content .img-container {
-    max-width: 500px;
-    min-width: 100px;
+    max-width: 350px;
+    margin-inline: auto;
 }
 
 #main-content .info {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     text-align: justify;
     gap: 50px;
@@ -44,12 +45,12 @@
 }
 
 #main-content .info-text {
+    margin-inline: auto;
     max-width: 750px;
 }
 
 #main-content .values {
-    max-width: 100%;
-    margin-bottom: 80px;
+    max-width: 1400px;
 }
 
 #main-content .values ul {
@@ -66,9 +67,12 @@
 
 #main-content .values li {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    margin-top: 20px;
-    gap: 50px;
+    margin-bottom: 80px;
+    gap: 30px;
+    margin-inline: auto;
 }
 
 #main-content .value-img {
@@ -77,5 +81,5 @@
 }
 
 #main-content .value-text {
-    max-width: 800px;
+    max-width: 700px;
 }

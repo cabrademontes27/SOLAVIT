@@ -3,79 +3,84 @@
 #main-content header {
     text-align: center;
     background-color: var(--headerBackground);
-    height: 389px;
-    border-radius: 12px;
-    padding: 20px;
+    min-height: 400px;
 }
 
 #main-content h1 {
+    font-size: 32px;
     text-align: center;
-    margin: 30px auto;
 }
 
 #main-content section {
     text-align: center;
     line-height: 32px;
+    padding: 50px;
 }
 
-#main-content section.questions details {
-    text-align: left;
-    width: 100%;
-    max-width: 800px;
-    border-radius: 12px;
-    background-color: var(--logoBackground);
-    margin: 10px auto 30px;
-    padding: 10px 30px;
-}
-
-#main-content section.questions summary {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    gap: 10px;
-    font-family: "Oswald", sans-serif;
-    font-weight: 500;
-}
-
-#main-content section.questions p {
-    margin-top: 10px;
-}
-
-#main-content section.questions details[open] i {
-    transform: rotate(90deg);
-}
-
-#main-content section.contact {
-    text-align: center;
-    gap: 50px;
-    padding: 20px;
-}
-
-#main-content section.contact ul {
+#main-content .questions {
     display: flex;
     flex-direction: column;
-    list-style: none;
-    width: 90%;
-    max-width: 750px;
-    margin: 0 auto;
     gap: 30px;
 }
 
-#main-content section.contact li {
-    display: flex;
-    align-items: center;
+#main-content .questions details {
     text-align: left;
-    width: 90%;
-    gap: 10px;
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 12px;
+    background-color: var(--logoBackground);
+    margin-inline: auto;
+    padding: 20px 30px;
 }
 
-#main-content section.contact li div {
+#main-content .questions summary {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 20px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+    font-size: 21px;
+}
+
+#main-content .questions p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+#main-content .questions details[open] i {
+    transform: rotate(90deg);
+}
+
+#main-content .contact {
+    padding: 50px;
+}
+
+#main-content .contact ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    max-width: 700px;
+    margin-inline: auto;
+    margin-top: 30px;
+    gap: 30px;
+}
+
+#main-content .contact li {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    gap: 10px;
+    text-align: left;
+}
+
+#main-content .contact li div {
     width: 100%;
     max-width: 32px;
     text-align: center;
 }
 
-#main-content section.contact .map {
+#main-content .contact .map {
     max-width: 350px;
     height: auto;
     display: block;

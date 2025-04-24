@@ -4,17 +4,25 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
-    padding: 50px 250px;
+    padding: 50px;
+    gap: 50px;
     font-size: 21px;
     font-weight: normal;
 }
 
+#main-content img {
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
 #main-content .info {
+    max-width: 1200px;
     display: flex;
     flex-direction: column;
     text-align: justify;
     gap: 30px;
+    margin-inline: auto;
 }
 
 #main-content section h1 {
@@ -23,19 +31,16 @@
     margin: 0 0;
 }
 
-
-#main-content .images {
+#main-content .img-wrapper {
     display: flex;
     gap: 30px;
-    padding: 50px;
+    align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
-#main-content img {
-    max-width: 450px;
-    height: auto;
-    object-fit: cover;
-    align-items: center;
+#main-content .img-container {
+    max-width: 400px;
 }
 
 #main-content .social {

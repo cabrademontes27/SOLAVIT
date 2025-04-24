@@ -52,13 +52,14 @@
 #main-content .creators {
     background-color: var(--newArcilla);
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    color: white;
-    padding: 70px;
+    justify-content: center;
+    padding: 70px 50px;
     gap: 50px;
+    color: white;
     font-size: 21px;
     text-align: left;
-    justify-content: center;
 }
 
 #main-content .creators h1 {
@@ -69,8 +70,8 @@
 #main-content .creators-info {
     display: flex;
     flex-direction: column;
-    max-width: 50%;
-    gap: 30px;
+    max-width: 700px;
+    gap: 20px;
 }
 
 #main-content .creators a {
@@ -92,8 +93,8 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 70px;
-    max-width: 80%;
+    padding: 70px 50px;
+    max-width: 1200px;
     margin-inline: auto;
 }
 
@@ -129,5 +130,5 @@
 #main-content .carousel-img {
     width: 100%;
     max-width: 400px;
-    flex-shrink: 0.01;
+    flex-shrink: 0.03;
 }
