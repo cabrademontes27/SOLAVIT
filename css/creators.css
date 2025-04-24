@@ -57,7 +57,7 @@
     font-size: 18px;
 }
 
-#main-content .creators-info p  {
+#main-content .creators-info p {
     font-size: 18px;
     text-align: left;
 }
@@ -66,6 +66,7 @@
     display: flex;
     max-width: 300px;
     flex-direction: column;
+    align-items: center;
     gap: 20px;
 }
 
