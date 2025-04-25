@@ -43,22 +43,24 @@
     display: flex;
     gap: 30px;
     justify-content: center;
+    max-width: 1750px;
     align-items: center;
+    margin-inline: auto;
 }
 
 #main-content .slider {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    max-width: 650px;
-    gap: 50px;
+    flex-wrap: wrap;
+    max-width: 800px;
+    gap: 30px;  
     padding: 20px;
 }
 
 #main-content .slider img {
     width: 100%;
-    max-height: 488px;
+    max-height: 400px;
     object-fit: cover;
 }
 
@@ -67,7 +69,6 @@
     flex-direction: column;
     text-align: left;
     gap: 30px;
-    width: 100%;
     max-width: 500px;
 }
 
