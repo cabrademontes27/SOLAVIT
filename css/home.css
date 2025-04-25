@@ -34,6 +34,7 @@
 
 #main-content .video-process h1 {
     font-family: "Special Gothic Expanded One", sans-serif;
+    text-transform: uppercase;
     margin: 0;
 }
 
@@ -50,7 +51,7 @@
 }
 
 #main-content .creators {
-    background-color: var(--newArcilla);
+    background-color: var(--barroBackground);
     display: flex;
     flex-wrap: wrap;
     align-items: center;

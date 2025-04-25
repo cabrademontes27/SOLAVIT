@@ -11,7 +11,7 @@
 }
 
 #main-content .intro {
-    background-color: var(--newArcilla);
+    background-color: var(--barroBackground);
     color: white;
     padding: 50px;
 }
@@ -55,7 +55,7 @@
 
 #main-content .creators-info p {
     font-size: 18px;
-    text-align: left;
+    text-align: center;
 }
 
 #main-content .creator-card {
@@ -69,6 +69,7 @@
 #main-content .location-info {
     display: flex;
     flex-direction: column;
+    text-align: center;
     gap: 10px;
 }
 

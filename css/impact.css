@@ -44,6 +44,11 @@
 }
 
 #main-content .social {
-    background-color: var(--newArcilla);
+    background-color: white;
+    color: black;
+}
+
+#main-content .ambiental {
+    background-color: #b05d39;
     color: white;
 }
