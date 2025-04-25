@@ -4,6 +4,10 @@
     text-align: center;
 }
 
+#main-content .product-wrapper {
+    padding: 50px;
+}
+
 #main-content button {
     background: none;
     border: none;
@@ -12,6 +16,21 @@
     gap: 20px;
     align-items: center;
     cursor: pointer;
+}
+
+#main-content .route {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    text-align: center;
+    font-size: 21px;
+}
+
+#main-content .route a {
+    text-decoration: none;
+    color: black;
+    text-transform: capitalize;
 }
 
 #main-content .back-button {
@@ -65,5 +84,5 @@
 }
 
 #main-content .product-info p {
-    font-size: 21px;
+    font-size: 20px;
 }

@@ -23,25 +23,34 @@ function loadStylesheet(stylesheet) {
   document.head.appendChild(link);
 }
 
-function renderProducts(products) {
+function renderProducts(products, parent) {
   const productList = document.getElementById("product-list");
   productList.innerHTML = products
-    .map(
-      (product) =>
-        `
-        <li class="product-card" data-id="${product.id}">
-          <img src="${product.images[0]}" alt="${product.name}" />
-          <h3>${product.name}</h3>
-          <p>${product.category}, ${product.subcategory}</p>
-        </li>
-        `
-    )
+    .map((product) => {
+      if (parent === "all") {
+        return `
+            <li class="product-card" data-parent="${product.parent}" data-id="${product.id}">
+              <img src="${product.images[0]}" alt="${product.name}" />
+              <h3>${product.name}</h3>
+              <p>${product.category}, ${product.subcategory}</p>
+            </li>
+            `;
+      } else if (product.parent === parent) {
+        return `
+            <li class="product-card" data-parent="${product.parent}" data-id="${product.id}">
+              <img src="${product.images[0]}" alt="${product.name}" />
+              <h3>${product.name}</h3>
+              <p>${product.category}, ${product.subcategory}</p>
+            </li>
+            `;
+      }
+    })
     .join("");
 
   addProductClickEvents(products);
 }
 
-function renderSubcategories(category) {
+function renderSubcategories(category, parent) {
   const subNav = document.getElementById("subfilter-nav");
   const subList = document.getElementById("subfilter-list");
 
@@ -55,11 +64,19 @@ function renderSubcategories(category) {
     });
 
     subNav.style.display = "block";
-    addSubcategoryEvents();
+    addSubcategoryEvents(parent);
   }
 }
 
 function showProductDetail(product) {
+  //route
+  const routeTag = document.getElementById("route");
+  routeTag.innerHTML = `
+    <a href="#products/all">Artesanías</a>
+    <p>/</p>
+    <a href="#products/${product.parent}">${product.parent}</a>
+  `;
+
   //product info
   const sectionTag = document.getElementById("product-info");
   sectionTag.innerHTML = `
@@ -91,10 +108,6 @@ function showProductDetail(product) {
     current = (current - 1 + images.length) % images.length;
     updateImage();
   };
-
-  document.getElementById("back-button").onclick = () => {
-    window.location.hash = "products";
-  };
 }
 
 function loadProductDetailById(productId) {
@@ -112,25 +125,25 @@ function loadProductDetailById(productId) {
     });
 }
 
-function addCategoryEvents(products) {
+function addCategoryEvents(products, parent) {
   document.querySelectorAll("#filter-nav a").forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
 
       const category = link.dataset.category;
-      renderSubcategories(category);
+      renderSubcategories(category, parent);
 
       const filterProducts =
         category === "Todos"
           ? products
           : products.filter((product) => product.category === category);
 
-      renderProducts(filterProducts);
+      renderProducts(filterProducts, parent);
     });
   });
 }
 
-function addSubcategoryEvents() {
+function addSubcategoryEvents(parent) {
   document.querySelectorAll("#subfilter-nav a").forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
@@ -146,7 +159,7 @@ function addSubcategoryEvents() {
               product.category === category &&
               product.subcategory === subcategory
           );
-          renderProducts(filterProducts);
+          renderProducts(filterProducts, parent);
         });
     });
   });
@@ -155,18 +168,19 @@ function addSubcategoryEvents() {
 function addProductClickEvents() {
   document.querySelectorAll(".product-card").forEach((card) => {
     card.addEventListener("click", () => {
+      const productParent = card.dataset.parent;
       const productId = card.dataset.id;
-      window.location.hash = `products/${productId}`;
+      window.location.hash = `products/${productParent}/${productId}`;
     });
   });
 }
 
-function initProducts(products) {
-  renderProducts(products);
-  addCategoryEvents(products);
+function initProducts(products, parent) {
+  renderProducts(products, parent);
+  addCategoryEvents(products, parent);
 }
 
-function loadProducts() {
+function loadProducts(parent) {
   fetch("partials/products.html")
     .then((res) => res.text())
     .then((html) => {
@@ -175,7 +189,7 @@ function loadProducts() {
       fetch("products.json")
         .then((res) => res.json())
         .then((products) => {
-          initProducts(products);
+          initProducts(products, parent);
         });
     });
 }
@@ -183,20 +197,23 @@ function loadProducts() {
 function navigateTo() {
   const hash = window.location.hash.replace("#", "");
   // reset scroll
-  window.scrollTo(0,0); 
+  window.scrollTo(0, 0);
+
+  const view = hash.split("/");
 
   // product detail view
-  if (hash.startsWith("products/")) {
-    const productId = hash.split("/")[1];
+  if (view[2]) {
+    const productId = view[2];
     loadStylesheet("product-detail.css");
     loadProductDetailById(productId);
     return;
   }
 
-  switch (hash) {
+  switch (view[0]) {
     case "products":
+      const parent = view[1];
       loadStylesheet("products.css");
-      loadProducts();
+      loadProducts(parent);
       break;
     case "about-us":
       loadStylesheet("about_us.css");

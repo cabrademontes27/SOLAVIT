@@ -4,6 +4,7 @@
     "name": "Artesanía 1",
     "description": "Una descripcion del producto",
     "images": ["images/product_1.jpg"],
+    "parent": "maderas",
     "category": "Decoración",
     "subcategory": "Exterior"
   },
@@ -15,6 +16,7 @@
       "images/decoracion/interior/decoracion_1.jpg",
       "images/decoracion/interior/decoracion_2.jpg"
     ],
+    "parent": "barro",
     "category": "Decoración",
     "subcategory": "Interior"
   },
@@ -23,6 +25,7 @@
     "name": "Artesanía 3",
     "description": "Una descripcion del producto",
     "images": ["images/cocina/frutero_1.jpg"],
+    "parent": "bisuteria",
     "category": "Cocina",
     "subcategory": "Fruteros"
   },
@@ -36,6 +39,7 @@
       "images/organizacion/joyero_3.jpg",
       "images/organizacion/joyero_4.jpg"
     ],
+    "parent": "barro",
     "category": "Organización",
     "subcategory": "Joyeros"
   }
