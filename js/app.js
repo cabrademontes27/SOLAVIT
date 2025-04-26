@@ -12,7 +12,7 @@ function loadPartial(id, file) {
     });
 }
 
-function loadStylesheet(stylesheet) {
+function loadStylesheet(stylesheet, callback) {
   const previous = document.querySelector('link[data-dinamico="true"]');
   if (previous) previous.remove();
 
@@ -20,10 +20,26 @@ function loadStylesheet(stylesheet) {
   link.rel = "stylesheet";
   link.href = `css/${stylesheet}`;
   link.setAttribute("data-dinamico", "true");
+
+  link.onload = function () {
+    if (typeof callback === "function") {
+      callback();
+    }
+  };
+
+  link.onerror = function () {
+    console.error(`Error loading stylesheet: ${stylesheet}`);
+  };
+
   document.head.appendChild(link);
 }
 
 function renderProducts(products, parent) {
+  // load title corresponding to parent
+  const productTitle = document.getElementById("product-title");
+  productTitle.innerHTML = parent === "all" ? "Artesanías" : `${parent}`;
+
+  // load products
   const productList = document.getElementById("product-list");
   productList.innerHTML = products
     .map((product) => {
@@ -212,28 +228,34 @@ function navigateTo() {
   switch (view[0]) {
     case "products":
       const parent = view[1];
-      loadStylesheet("products.css");
-      loadProducts(parent);
+      loadStylesheet("products.css", function () {
+        loadProducts(parent);
+      });
       break;
     case "about-us":
-      loadStylesheet("about_us.css");
-      loadPartial("main-content", "about-us.html");
+      loadStylesheet("about_us.css", function () {
+        loadPartial("main-content", "about-us.html");
+      });
       break;
     case "questions":
-      loadStylesheet("questions.css");
-      loadPartial("main-content", "questions.html");
+      loadStylesheet("questions.css", function () {
+        loadPartial("main-content", "questions.html");
+      });
       break;
     case "creators":
-      loadStylesheet("creators.css");
-      loadPartial("main-content", "creators.html");
+      loadStylesheet("creators.css", function () {
+        loadPartial("main-content", "creators.html");
+      });
       break;
     case "impact":
-      loadStylesheet("impact.css");
-      loadPartial("main-content", "impact.html");
+      loadStylesheet("impact.css", function () {
+        loadPartial("main-content", "impact.html");
+      });
       break;
     default:
-      loadStylesheet("home.css");
-      loadPartial("main-content", "home.html");
+      loadStylesheet("home.css", function () {
+        loadPartial("main-content", "home.html");
+      });
   }
 }
 

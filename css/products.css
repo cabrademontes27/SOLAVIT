@@ -9,7 +9,8 @@
 }
 
 #main-content .product-title {
-    margin: 20px auto;
+    margin: 0 auto 20px;
+    text-transform: capitalize;
 }
 
 #main-content ul {
