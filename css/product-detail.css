@@ -46,6 +46,7 @@
     max-width: 1750px;
     align-items: center;
     margin-inline: auto;
+    flex-wrap: wrap;
 }
 
 #main-content .slider {
