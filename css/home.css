@@ -111,6 +111,10 @@
     margin: 0;
 }
 
+#main-content .process h3 {
+    text-align: left;
+}
+
 #main-content .process p {
     font-size: 21px;
     text-align: left;
@@ -126,10 +130,18 @@
     gap: 31px;
     overflow-x: auto;
     align-items: center;
+    max-width: 950px;
 }
 
 #main-content .carousel-img {
-    width: 100%;
-    max-width: 400px;
-    flex-shrink: 0.03;
+    max-width: 300px;
+}
+
+#main-content .carousel-element {
+    max-width: 300px;
+    flex-shrink: 0;
+}
+
+#main-content .carousel-element p {
+    font-size: 16px;
 }
