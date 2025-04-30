@@ -130,11 +130,11 @@
     gap: 31px;
     overflow-x: auto;
     align-items: center;
-    max-width: 950px;
 }
 
 #main-content .carousel-img {
-    max-width: 300px;
+    max-height: 250px;
+    overflow: hidden;
 }
 
 #main-content .carousel-element {
@@ -143,5 +143,5 @@
 }
 
 #main-content .carousel-element p {
-    font-size: 16px;
+    font-size: 14px;
 }
