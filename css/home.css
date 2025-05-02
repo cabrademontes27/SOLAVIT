@@ -1,33 +1,47 @@
 @import './constants.css';
 
 #main-content img {
-    max-width: 100%;
+    inline-size: 100%;
     display: block;
     object-fit: cover;
 }
 
-#main-content header {
-    padding: 70px 50px;
-    background-image: url("images/placeholder.png"), linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.786));
+#main-content .home-header {
+    background-color: var(--barroBackground);
+    background-image: url("/images/home/Inicio_resized.jpg");
     background-size: cover;
+    background-position: center 70%;
+
+    padding-top: 30svh;
+    padding-bottom: 5svh;
+    padding-inline: 50px;
     width: 100%;
-    min-height: 390px;
-    text-align: left;
-    display: flex;
-    flex-direction: column-reverse;
+    min-height: 40svh;
+    position: relative;
+    isolation: isolate;
+
     font-family: "DM Serif Text", serif;
     font-size: 32px;
     color: white;
 }
 
+#main-content .home-header::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.786));
+}
+
 #main-content section {
-    text-align: center;
     line-height: 32px;
 }
 
 #main-content .video-process {
     display: flex;
     flex-direction: column;
+    padding: 30px;
     gap: 30px;
     align-items: center;
 }
@@ -35,19 +49,10 @@
 #main-content .video-process h1 {
     font-family: "Special Gothic Expanded One", sans-serif;
     text-transform: uppercase;
-    margin: 0;
-}
-
-#main-content .video-process {
-    padding: 30px;
-}
-
-#main-content .video-process h1 {
-    margin: 0;
 }
 
 #main-content .video-container {
-    max-width: 800px;
+    max-width: 1000px;
 }
 
 #main-content .creators {
@@ -60,12 +65,6 @@
     gap: 50px;
     color: white;
     font-size: 21px;
-    text-align: left;
-}
-
-#main-content .creators h1 {
-    text-align: left;
-    font-size: 32px;
 }
 
 #main-content .creators-info {
@@ -76,7 +75,7 @@
 }
 
 #main-content .creators a {
-    width: fit-content;
+    max-width: fit-content;
     padding: 10px 20px;
     color: white;
     text-decoration: none;
@@ -88,6 +87,9 @@
 
 #main-content .img-container {
     max-width: 400px;
+    max-height: 350px;
+    overflow: clip;
+    border-radius: 20px;
 }
 
 #main-content .process {
@@ -100,48 +102,101 @@
 }
 
 #main-content .process h1 {
-    text-align: left;
     font-size: 32px;
-    margin: 0;
 }
 
 #main-content .process h2 {
-    text-align: left;
     font-size: 24px;
-    margin: 0;
-}
-
-#main-content .process h3 {
-    text-align: left;
 }
 
 #main-content .process p {
     font-size: 21px;
-    text-align: left;
+    word-wrap: break-word;
 }
 
-#main-content .carousel-container {
-    margin-inline: auto;
-    max-width: 950px;
+#main-content .scroller {
+    max-width: auto;
+    display: grid;
+    gap: 20px;
+    grid-auto-flow: column;
+    grid-auto-columns: 45%;
+    grid-template-columns: normal;
+
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+
+    padding-bottom: 20px;
+}
+
+@media (width <= 425px) {
+    #main-content .scroller {
+        grid-auto-columns: 100%;
+    }
+}
+
+@media (425px < width < 700px) {
+    #main-content .scroller {
+        grid-auto-columns: 80%;
+    }
+}
+
+#main-content .scroller-element {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 20px;
+}
+
+#main-content .scroller i {
+    margin-block: auto;
+}
+
+#main-content .scroller-img>img {
+    aspect-ratio: 5 / 4;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+#main-content .scroller-img {
+    display: grid;
+    grid-template-rows: min-content;
+    gap: 10px;
+    border-radius: 12px;
+    padding: 14px;
+    color: white;
+    background-color: var(--newArcilla);
+}
+
+#main-content .scroller p {
+    font-size: 14px;
+}
+
+/* #main-content .carousel-container {
+    max-width: 100%;
 }
 
 #main-content .carousel {
+    border: 1px solid red;
     display: flex;
-    gap: 31px;
+    gap: 30px;
     overflow-x: auto;
     align-items: center;
 }
 
-#main-content .carousel-img {
-    max-height: 250px;
-    overflow: hidden;
-}
-
 #main-content .carousel-element {
-    max-width: 300px;
+    border: 1px solid red;
+    max-width: 400px;
     flex-shrink: 0;
 }
 
+#main-content .carousel-img {
+    max-height: 320px;
+    border-radius: 20px;
+    overflow: clip;
+}
+
+
 #main-content .carousel-element p {
     font-size: 14px;
-}
+    width: 100%;
+    border: 1px solid red;
+} */
