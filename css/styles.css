@@ -12,10 +12,13 @@ body {
     min-height: 100vh;
 }
 
-.nav-header {
-    position: sticky;
+.header {
     top: 0;
-    z-index: 1000;
+    z-index: 10000;
+    position: sticky;
+}
+
+.nav-header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
@@ -29,7 +32,6 @@ body {
     display: flex;
     gap: 30px;
     padding: 20px;
-
 }
 
 .primary-navigation a {

@@ -59,6 +59,7 @@
 }
 
 #main-content .product-list {
+    max-width: 1400px;
     list-style: none;
     display: flex;
     gap: 30px;
