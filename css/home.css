@@ -8,7 +8,7 @@
 
 #main-content .home-header {
     background-color: var(--barroBackground);
-    background-image: url("/images/home/Inicio_resized.jpg");
+    background-image: url("/matsin-web-page/images/home/Inicio.jpg"), url("/images/home/Inicio.jpg");
     background-size: cover;
     background-position: center 70%;
 
@@ -128,7 +128,7 @@
     padding-bottom: 20px;
 }
 
-@media (width <= 425px) {
+@media (width <=425px) {
     #main-content .scroller {
         grid-auto-columns: 100%;
     }

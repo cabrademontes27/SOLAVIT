@@ -10,6 +10,7 @@
 
 #main-content .product-title {
     margin: 0 auto 20px;
+    text-align: center;
     text-transform: capitalize;
 }
 
@@ -60,8 +61,6 @@
 #main-content .product-list {
     list-style: none;
     display: flex;
-    width: 100%;
-    max-width: 1300px;
     gap: 30px;
     flex-wrap: wrap;
     justify-content: center;
@@ -74,7 +73,6 @@
 }
 
 #main-content .product-card {
-    width: 100%;
     max-width: 400px;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -83,8 +81,8 @@
 }
 
 #main-content .product-card img {
-    width: 100%;
-    max-height: 250px;
+    max-width: 100%;
+    aspect-ratio: 5/4;
     object-fit: cover;
     border-radius: 8px;
 }

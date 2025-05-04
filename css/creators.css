@@ -33,6 +33,7 @@
 
 #main-content .creators-intro {
     max-width: 1200px;
+    margin-inline: auto;
 }
 
 #main-content .creators-info {

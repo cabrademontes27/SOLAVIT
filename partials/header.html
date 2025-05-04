@@ -1,27 +1,31 @@
-<header class="header">
-  <div class="wrapper">
-    <div class="nav-wrapper">
-      <a href="#home">
-        <div class="logo-wrapper">
-          <img src="images/matsin_logo.png" alt="Logo de Matsin" />
-        </div>
-      </a>
-      <ul>
-        <li class="dropdown">
-          <a href="#products/all">Artesanías </a>
-          <div class="submenu-wrapper">
-            <ul class="submenu">
-              <li><a href="#products/maderas">Maderas</a></li>
-              <li><a href="#products/barro">Barro</a></li>
-              <li><a href="#products/bisuteria">Bisutería</a></li>
-              <li><a href="#products/all">Ver todos</a></li>
-            </ul>
-          </div>
-        </li>
-        <li><a href="#impact">Impacto</a></li>
-        <li><a href="#creators">Creadores</a></li>
-        <li><a href="#about-us">Nosotros</a></li>
-      </ul>
+<nav class="nav-header">
+  <a href="#home">
+    <div class="logo-wrapper">
+      <img src="images/matsin_logo.png" alt="Logo de Matsin" />
     </div>
-  </div>
-</header>
+  </a>
+
+  <button
+    id="mobile-nav-toggle"
+    data-expanded="false"
+    class="mobile-nav-toggle"
+    onclick="openSidebar()"
+  ></button>
+
+  <ul id="primary-navigation" data-visible="false" class="primary-navigation">
+    <li class="dropdown">
+      <a href="#products/all">Artesanías </a>
+      <div class="submenu-wrapper">
+        <ul class="submenu">
+          <li><a href="#products/maderas">Maderas</a></li>
+          <li><a href="#products/barro">Barro</a></li>
+          <li><a href="#products/bisuteria">Bisutería</a></li>
+          <li><a href="#products/all">Ver todos</a></li>
+        </ul>
+      </div>
+    </li>
+    <li><a href="#impact">Impacto</a></li>
+    <li><a href="#creators">Creadores</a></li>
+    <li><a href="#about-us">Nosotros</a></li>
+  </ul>
+</nav>
