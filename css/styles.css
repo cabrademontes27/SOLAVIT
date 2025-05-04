@@ -46,6 +46,7 @@ body {
 
 .mobile-nav-toggle {
     display: none;
+    cursor: pointer;
 }
 
 
