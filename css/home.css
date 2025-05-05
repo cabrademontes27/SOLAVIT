@@ -2,8 +2,8 @@
 
 #main-content img {
     inline-size: 100%;
-    display: block;
     object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #main-content .home-header {
@@ -15,7 +15,6 @@
     padding-top: 30svh;
     padding-bottom: 5svh;
     padding-inline: 50px;
-    width: 100%;
     min-height: 40svh;
     position: relative;
     isolation: isolate;

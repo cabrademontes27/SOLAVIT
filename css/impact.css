@@ -12,24 +12,20 @@
 
 #main-content img {
     max-width: 100%;
-    display: block;
     object-fit: cover;
     border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #main-content .info {
     max-width: 1200px;
-    display: flex;
-    flex-direction: column;
-    text-align: justify;
-    gap: 30px;
     margin-inline: auto;
 }
 
-#main-content section h1 {
+#main-content .info h1 {
     font-size: 32px;
     text-align: left;
-    margin: 0 0;
+    margin-bottom: 20px;
 }
 
 #main-content .img-wrapper {
@@ -42,11 +38,6 @@
 
 #main-content .img-container {
     max-width: 400px;
-}
-
-#main-content .social {
-    background-color: white;
-    color: black;
 }
 
 #main-content .ambiental {

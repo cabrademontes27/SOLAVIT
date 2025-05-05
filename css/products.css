@@ -38,7 +38,7 @@
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     font-size: 20px;
     text-transform: uppercase;
 }
@@ -49,12 +49,14 @@
 
 #main-content .subfilter-nav ul {
     list-style: none;
+
     display: flex;
-    flex: wrap;
+    flex-wrap: wrap;
+
     gap: 30px;
     justify-content: center;
     font-size: 18px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     text-transform: uppercase;
 }
 

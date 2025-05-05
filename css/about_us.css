@@ -1,24 +1,37 @@
 @import './constants.css';
 
 #main-content img {
-    display: block;
     max-width: 100%;
     object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#main-content header {
-    background-color: var(--headerBackground);
-    display: flex;
-    justify-content: center;
-    min-height: 400px;
-    padding: 20px;
+#main-content .hero {
+    background-image: url("/matsin-web-page/images/varios/Nosotros.jpg"), url("/images/varios/Nosotros.jpg");
+    background-size: cover;
+    background-position: center 60%;
+    min-height: 40svh;
+
+    position: relative;
+    isolation: isolate;
+}
+
+#main-content .hero::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
 }
 
 #main-content section {
     font-size: 21px;
+    max-width: 1400px;
     margin-inline: auto;
-    margin-top: 30px;
-    padding: 10px 50px;
+    line-height: 32px;
+    padding: 50px;
 }
 
 #main-content section h1 {
@@ -26,60 +39,48 @@
     margin-bottom: 20px;
 }
 
-#main-content section p {
-    line-height: 32px;
-}
-
 #main-content .img-container {
-    max-width: 350px;
-    margin-inline: auto;
+    max-width: 400px;
 }
 
 #main-content .info {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    text-align: justify;
-    gap: 50px;
-    margin-bottom: 100px;
+    justify-content: center;
+    gap: 4vw;
 }
 
 #main-content .info-text {
-    margin-inline: auto;
-    max-width: 750px;
+    max-width: 800px;
 }
 
-#main-content .values {
-    max-width: 1400px;
+@media (width <= 1320px) {
+    #main-content .info-text {
+        max-width: 600px;
+    }
 }
 
 #main-content .values ul {
     list-style: none;
-    text-align: justify;
     margin-top: 40px;
 }
 
-#main-content .values h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    font-weight: 500;
-}
-
-#main-content .values li {
+#main-content .values ul>li {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-bottom: 80px;
-    gap: 30px;
+    margin-bottom: 60px;
+    gap: 2rem;
     margin-inline: auto;
 }
 
 #main-content .value-img {
-    max-width: 250px;
-    min-width: 50px;
+    max-width: 300px;
+    aspect-ratio: 5/4;
 }
 
 #main-content .value-text {
-    max-width: 700px;
+    max-width: 800px;
 }
