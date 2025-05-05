@@ -27,10 +27,10 @@
 }
 
 #main-content section {
-    font-size: 21px;
+    font-size: 1.3125rem;
     max-width: 1400px;
     margin-inline: auto;
-    line-height: 32px;
+    line-height: 2rem;
     padding: 50px;
 }
 

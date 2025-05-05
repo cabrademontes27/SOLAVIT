@@ -11,7 +11,7 @@
 #main-content button {
     background: none;
     border: none;
-    font-size: 24px;
+    font-size: 1.5rem;
     display: flex;
     gap: 20px;
     align-items: center;
@@ -24,7 +24,7 @@
     justify-content: center;
     gap: 15px;
     text-align: center;
-    font-size: 21px;
+    font-size: 1.3125rem;
 }
 
 #main-content .route a {
@@ -85,16 +85,16 @@
 
 #main-content .product-info h1 {
     text-align: left;
-    font-size: 32px;
+    font-size: 2rem;
     font-weight: 500;
     margin: 0;
 }
 
 #main-content .product-info h2 {
     font-weight: 400;
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 
 #main-content .product-info p {
-    font-size: 20px;
+    font-size: 1.25rem;
 }

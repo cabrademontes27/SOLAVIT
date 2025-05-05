@@ -7,7 +7,7 @@
 }
 
 #main-content h1 {
-    font-size: 32px;
+    font-size: 2rem;
     text-align: center;
 }
 
@@ -40,11 +40,11 @@
     cursor: pointer;
     gap: 20px;
     font-weight: 600;
-    font-size: 21px;
+    font-size: 1.3125rem;
 }
 
 #main-content .questions p {
-    font-size: 18px;
+    font-size: 1.125rem;
     margin-top: 10px;
 }
 

@@ -2,12 +2,12 @@
 
 #main-content section h1 {
     text-align: left;
-    font-size: 32px;
+    font-size: 2rem;
 }
 
 #main-content section p {
     text-align: justify;
-    font-size: 21px;
+    font-size: 1.3125rem;
 }
 
 #main-content .intro {
@@ -46,15 +46,15 @@
 }
 
 #main-content .creators-info h2 {
-    font-size: 21px;
+    font-size: 1.3125rem;
 }
 
 #main-content .creators-info h3 {
-    font-size: 18px;
+    font-size: 1.125rem;
 }
 
 #main-content .creators-info p {
-    font-size: 18px;
+    font-size: 1.125rem;
     text-align: center;
 }
 

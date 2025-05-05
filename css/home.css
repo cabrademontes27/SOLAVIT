@@ -20,7 +20,7 @@
     isolation: isolate;
 
     font-family: "DM Serif Text", serif;
-    font-size: 32px;
+    font-size: 2rem;
     color: white;
 }
 
@@ -63,7 +63,7 @@
     padding: 70px 50px;
     gap: 50px;
     color: white;
-    font-size: 21px;
+    font-size: 1.3125rem;
 }
 
 #main-content .creators-info {
@@ -81,7 +81,7 @@
     background-color: var(--darkBarro);
     border-radius: 8px;
     border: none;
-    font-size: 19px;
+    font-size: 1.1875rem;
 }
 
 #main-content .img-container {
@@ -92,24 +92,23 @@
 }
 
 #main-content .process {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    display: grid;
+    gap: 1.2rem;
     padding: 70px 50px;
     max-width: 1200px;
     margin-inline: auto;
 }
 
 #main-content .process h1 {
-    font-size: 32px;
+    font-size: 2rem;
 }
 
 #main-content .process h2 {
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 
 #main-content .process p {
-    font-size: 21px;
+    font-size: 1.3125rem;
     word-wrap: break-word;
 }
 
@@ -166,36 +165,5 @@
 }
 
 #main-content .scroller p {
-    font-size: 14px;
+    font-size: 0.875rem;
 }
-
-/* #main-content .carousel-container {
-    max-width: 100%;
-}
-
-#main-content .carousel {
-    border: 1px solid red;
-    display: flex;
-    gap: 30px;
-    overflow-x: auto;
-    align-items: center;
-}
-
-#main-content .carousel-element {
-    border: 1px solid red;
-    max-width: 400px;
-    flex-shrink: 0;
-}
-
-#main-content .carousel-img {
-    max-height: 320px;
-    border-radius: 20px;
-    overflow: clip;
-}
-
-
-#main-content .carousel-element p {
-    font-size: 14px;
-    width: 100%;
-    border: 1px solid red;
-} */
