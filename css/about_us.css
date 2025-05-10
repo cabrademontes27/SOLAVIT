@@ -39,6 +39,10 @@
     margin-bottom: 20px;
 }
 
+#main-content section p {
+    text-align: justify;
+}
+
 #main-content .img-container {
     max-width: 400px;
 }

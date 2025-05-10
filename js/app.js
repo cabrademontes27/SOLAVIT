@@ -37,10 +37,14 @@ function renderProducts(products, parent) {
   const productList = document.getElementById("product-list");
   productList.innerHTML = products
     .map((product) => {
-      let productString = product.parent;
+      let productParent =
+        product.parent === "bisuteria" ? "Bisutería" : product.parent;
+
+      let productString = productParent;
       productString += product.category === "" ? "" : `, ${product.category}`;
       productString +=
         product.subcategory === "" ? "" : `, ${product.subcategory}`;
+
       if (parent === "all") {
         return `
             <li class="product-card" data-parent="${product.parent}" data-id="${product.id}">
@@ -83,17 +87,18 @@ function renderSubcategories(category, parent) {
 }
 
 function showProductDetail(product) {
+  let parent = product.parent === "bisuteria" ? "Bisutería" : product.parent;
   //route
   const routeTag = document.getElementById("route");
   routeTag.innerHTML = `
     <a href="#products/all">Artesanías</a>
     <p>/</p>
-    <a href="#products/${product.parent}">${product.parent}</a>
+    <a href="#products/${product.parent}">${parent}</a>
   `;
 
   //product info
   const sectionTag = document.getElementById("product-info");
-  let categories = product.parent;
+  let categories = parent;
   categories += product.category === "" ? "" : `, ${product.category}`;
   categories += product.subcategory === "" ? "" : `, ${product.subcategory}`;
   sectionTag.innerHTML = `

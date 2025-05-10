@@ -23,6 +23,10 @@
     gap: 30px;
 }
 
+#main-content .questions p {
+    text-align: justify;
+}
+
 #main-content .questions details {
     color: white;
     text-align: left;
