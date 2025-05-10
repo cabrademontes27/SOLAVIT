@@ -1,46 +1,336 @@
 [
   {
     "id": 1,
-    "name": "Artesanía 1",
-    "description": "Una descripcion del producto",
-    "images": ["images/product_1.jpg"],
-    "parent": "maderas",
+    "name": "Fruteros",
+    "description": "Piezas utilitarias y decorativas, diseñadas para contener frutas u otros elementos de manera elegante y funcional.",
+    "images": [
+      "images/Barro/Cocina/Frutero 1.jpg",
+      "images/Barro/Cocina/Frutero 2.jpg",
+      "images/Barro/Cocina/Frutero 3.jpg",
+      "images/Barro/Cocina/Frutero 4.jpg",
+      "images/Barro/Cocina/Coco.jpg"
+    ],
+    "parent": "barro",
+    "category": "Cocina",
+    "subcategory": ""
+  },
+  {
+    "id": 2,
+    "name": "Comales",
+    "description": "Superficies tradicionales de cocción, elaboradas en barro natural, ideales para tortillas y antojitos mexicanos. Conservan el sabor auténtico de la cocina tradicional.",
+    "images": ["images/Barro/Cocina/Comal para tortilla.jpg"],
+    "parent": "barro",
+    "category": "Cocina",
+    "subcategory": ""
+  },
+  {
+    "id": 3,
+    "name": "Mini cazuelas",
+    "description": "Recipientes pequeños elaborados en barro, ideales para porciones individuales, presentación de salsas o como elementos decorativos.",
+    "images": [
+      "images/Barro/Cocina/Cazuela 1.jpg",
+      "images/Barro/Cocina/Cazuela 2.jpg",
+      "images/Barro/Cocina/Cazuela 3.jpg",
+      "images/Barro/Cocina/Cazuela 4.jpg"
+    ],
+    "parent": "barro",
+    "category": "Cocina",
+    "subcategory": ""
+  },
+  {
+    "id": 4,
+    "name": "Cantaros",
+    "description": "Recipientes de mediana capacidad, utilizados para contener líquidos. Su diseño artesanal también los hace piezas destacadas para decoración.",
+    "images": ["images/Barro/Cocina/Cantaro .jpg"],
+    "parent": "barro",
+    "category": "Cocina",
+    "subcategory": ""
+  },
+  {
+    "id": 5,
+    "name": "Bebedero",
+    "description": "Piezas funcionales para aves, elaboradas con barro natural, diseñadas para integrarse de forma armónica en espacios exteriores.",
+    "images": ["images/Barro/Decoración/Exterior/Bebedero.jpg"],
+    "parent": "barro",
     "category": "Decoración",
     "subcategory": "Exterior"
   },
   {
-    "id": 2,
-    "name": "Artesanía 2",
-    "description": "Una descripcion del producto",
+    "id": 6,
+    "name": "Cantaros colgantes",
+    "description": "Diseños artesanales suspendidos, ideales para decoración rústica en exteriores. Aportan calidez y estilo tradicional.",
     "images": [
-      "images/decoracion/interior/decoracion_1.jpg",
-      "images/decoracion/interior/decoracion_2.jpg"
+      "images/Barro/Decoración/Exterior/Cantaro colgante .jpg",
+      "images/Barro/Decoración/Exterior/Cantaro colgante 2.jpg"
+    ],
+    "parent": "barro",
+    "category": "Decoración",
+    "subcategory": "Exterior"
+  },
+  {
+    "id": 7,
+    "name": "Colgantes",
+    "description": "Elementos decorativos suspendibles, diseñados en barro natural, ideales para ambientar espacios con un toque artesanal.",
+    "images": [
+      "images/Barro/Decoración/Exterior/Colgante.jpg",
+      "images/Barro/Decoración/Exterior/Colgante 2.jpg"
+    ],
+    "parent": "barro",
+    "category": "Decoración",
+    "subcategory": "Exterior"
+  },
+  {
+    "id": 8,
+    "name": "Juego de mini tazas",
+    "description": "Conjunto decorativo de tazas en miniatura, elaboradas artesanalmente, ideales para colecciones o detalles personalizados.",
+    "images": [
+      "images/Barro/Decoración/Interior/Juego de mini tazas.jpg",
+      "images/Barro/Decoración/Interior/Juego de tazas miniatura.jpg"
     ],
     "parent": "barro",
     "category": "Decoración",
     "subcategory": "Interior"
   },
   {
-    "id": 3,
-    "name": "Artesanía 3",
-    "description": "Una descripcion del producto",
-    "images": ["images/cocina/frutero_1.jpg"],
-    "parent": "bisuteria",
-    "category": "Cocina",
-    "subcategory": "Fruteros"
+    "id": 9,
+    "name": "Jícaras",
+    "description": "Recipientes tradicionales, elaborados de manera natural y artesanal, utilizados como elementos decorativos.",
+    "images": [
+      "images/Barro/Decoración/Interior/Varios 2.jpg",
+      "images/Barro/Decoración/Interior/Varios 3.jpg"
+    ],
+    "parent": "barro",
+    "category": "Decoración",
+    "subcategory": "Interior"
   },
   {
-    "id": 4,
-    "name": "Artesanía 4 con un nombre algo largo para demostrar el overflow",
-    "description": "Una descripcion del producto",
+    "id": 10,
+    "name": "Sahumerios",
+    "description": "Hecho a mano con barro natural, ideal para quemar copal o incienso. Diseño artesanal que combina funcionalidad y estética. Disponible en dos modelos.",
     "images": [
-      "images/organizacion/joyero_1.jpg",
-      "images/organizacion/joyero_2.jpg",
-      "images/organizacion/joyero_3.jpg",
-      "images/organizacion/joyero_4.jpg"
+      "images/Barro/Decoración/Interior/Sahumerio.jpg",
+      "images/Barro/Decoración/Interior/Sahumerio 2.jpg"
+    ],
+    "parent": "barro",
+    "category": "Decoración",
+    "subcategory": "Interior"
+  },
+  {
+    "id": 11,
+    "name": "Faros",
+    "description": "Objetos decorativos, inspirados en formas de iluminación tradicional. Aportan un ambiente cálido y acogedor.",
+    "images": [
+      "images/Barro/Decoración/Interior/faro_2.jpg",
+      "images/Barro/Decoración/Interior/faro_1.jpg"
+    ],
+    "parent": "barro",
+    "category": "Decoración",
+    "subcategory": "Interior"
+  },
+  {
+    "id": 12,
+    "name": "Alcancías",
+    "description": "Piezas artesanales diseñadas para el ahorro, disponibles en diversas formas y figuras.",
+    "images": [
+      "images/Barro/Decoración/Interior/Alcancia 1.jpg",
+      "images/Barro/Decoración/Interior/Alcancia 2.jpg",
+      "images/Barro/Decoración/Interior/Alcancia 2.1.jpg",
+      "images/Barro/Decoración/Interior/Alcancia 3.jpg"
+    ],
+    "parent": "barro",
+    "category": "Decoración",
+    "subcategory": "Interior"
+  },
+  {
+    "id": 13,
+    "name": "Imanes",
+    "description": "Pequeñas piezas con aplicaciones magnéticas. Ideales para decoración de superficies metálicas con motivos artesanales.",
+    "images": [
+      "images/Barro/Decoración/Interior/Imanes.jpg",
+      "images/Barro/Decoración/Interior/Taza iman 1.jpg",
+      "images/Barro/Decoración/Interior/Taza iman 2.jpg"
+    ],
+    "parent": "barro",
+    "category": "Decoración",
+    "subcategory": "Interior"
+  },
+  {
+    "id": 14,
+    "name": "Comales",
+    "description": "Comales artesanales elaborados en barro natural, decorados a mano con diseños tradicionales. Piezas exclusivamente decorativas que aportan un toque rústico y auténtico a cualquier espacio.",
+    "images": [
+      "images/Barro/Decoración/Interior/Comal pintado 1.jpg",
+      "images/Barro/Decoración/Interior/Comal pintado 2.jpg"
+    ],
+    "parent": "barro",
+    "category": "Decoración",
+    "subcategory": "Interior"
+  },
+  {
+    "id": 15,
+    "name": "Floreros",
+    "description": "Recipientes para flores elaborados artesanalmente. Combinan funcionalidad con un diseño rústico y elegante.",
+    "images": ["images/Barro/Decoración/Interior/Florero.jpg"],
+    "parent": "barro",
+    "category": "Decoración",
+    "subcategory": "Interior"
+  },
+  {
+    "id": 16,
+    "name": "Planchas",
+    "description": "Reproducciones en barro de planchas antiguas, utilizadas como elementos decorativos que evocan la vida doméstica tradicional.",
+    "images": [
+      "images/Barro/Decoración/Interior/Planca 1.jpg",
+      "images/Barro/Decoración/Interior/plancha.jpg",
+      "images/Barro/Decoración/Interior/Planca 2.1.jpg"
+    ],
+    "parent": "barro",
+    "category": "Decoración",
+    "subcategory": "Interior"
+  },
+  {
+    "id": 17,
+    "name": "Canoas",
+    "description": "Piezas alargadas y decorativas, ideales como centros de mesa o para presentación de elementos en espacios rústicos.",
+    "images": [
+      "images/Barro/Decoración/Interior/Canoa 1.jpg",
+      "images/Barro/Decoración/Interior/Canoa 2.jpg",
+      "images/Barro/Decoración/Interior/Canoa 2.1.jpg"
+    ],
+    "parent": "barro",
+    "category": "Decoración",
+    "subcategory": "Interior"
+  },
+  {
+    "id": 18,
+    "name": "Guitarras",
+    "description": "Instrumentos en miniatura elaborados en barro, pintados a mano, ideales para decoración o como recuerdo artesanal.",
+    "images": ["images/placeholder.png"],
+    "parent": "barro",
+    "category": "Decoración",
+    "subcategory": "Interior"
+  },
+  {
+    "id": 19,
+    "name": "Sombreros",
+    "description": "Representaciones en miniatura del sombrero tradicional mexicano. Elaborados en barro, son ideales como elementos decorativos o souvenirs.",
+    "images": [
+      "images/Barro/Decoración/Interior/Sombrero 3.jpg",
+      "images/Barro/Decoración/Interior/Sombrero miniatura.jpg",
+      "images/Barro/Decoración/Interior/Sombrero 2.jpg"
+    ],
+    "parent": "barro",
+    "category": "Decoración",
+    "subcategory": "Interior"
+  },
+  {
+    "id": 20,
+    "name": "Botas",
+    "description": "Piezas miniaturas decorativas que representan el calzado tradicional, trabajadas en barro y detalladas con esmero artesanal.",
+    "images": ["images/Barro/Decoración/Interior/Bota.jpg"],
+    "parent": "barro",
+    "category": "Decoración",
+    "subcategory": "Interior"
+  },
+  {
+    "id": 21,
+    "name": "Sandalias",
+    "description": "Representaciones en miniatura de sandalias tradicionales, elaboradas a mano como elementos decorativos y coleccionables.",
+    "images": [
+      "images/Barro/Decoración/Interior/Sandalia .jpg",
+      "images/Barro/Decoración/Interior/Sandalia 1.jpg",
+      "images/Barro/Decoración/Interior/Sandalia 3.jpg",
+      "images/Barro/Decoración/Interior/Sandalia 4.jpg"
+    ],
+    "parent": "barro",
+    "category": "Decoración",
+    "subcategory": "Interior"
+  },
+  {
+    "id": 22,
+    "name": "Joyeros",
+    "description": "Elaborados y decorados a mano, estos joyeros ofrecen una forma elegante y artesanal de resguardar piezas pequeñas como anillos, aretes o collares.",
+    "images": [
+      "images/Barro/Organización/Joyero 1.jpg",
+      "images/Barro/Organización/Joyero 2.jpg",
+      "images/Barro/Organización/Joyero 3.jpg",
+      "images/Barro/Organización/Joyero 4.jpg"
     ],
     "parent": "barro",
     "category": "Organización",
-    "subcategory": "Joyeros"
+    "subcategory": ""
+  },
+  {
+    "id": 23,
+    "name": "Portalápices",
+    "description": "Accesorios de escritorio, ideales para mantener lápices, plumas y otros objetos organizados. Su diseño artesanal aporta un toque distintivo al espacio de trabajo.",
+    "images": [
+      "images/Barro/Organización/Portalapices 1.jpg",
+      "images/Barro/Organización/Portalapices 2.jpg"
+    ],
+    "parent": "barro",
+    "category": "Organización",
+    "subcategory": ""
+  },
+  {
+    "id": 24,
+    "name": "Cucharas",
+    "description": "Utensilios de madera tallados a mano, ideales para cocinar o servir. Ligeros, resistentes y adecuados para todo tipo de superficies.",
+    "images": [
+      "images/Madera/Cocina/Cucharas 2.jpg",
+      "images/Madera/Cocina/Cucharas.jpg"
+    ],
+    "parent": "madera",
+    "category": "Cocina",
+    "subcategory": ""
+  },
+  {
+    "id": 25,
+    "name": "Palitas",
+    "description": "Accesorios versátiles, elaborados en madera, utilizados para mezclar, servir o manipular alimentos con practicidad y cuidado.",
+    "images": [
+      "images/Madera/Cocina/Palitas de cocina.jpg"
+    ],
+    "parent": "madera",
+    "category": "Cocina",
+    "subcategory": ""
+  },
+  {
+    "id": 26,
+    "name": "Servilletero organizador",
+    "description": "Pieza multifuncional diseñada para contener servilletas y otros elementos de mesa. Su elaboración en madera resalta la calidez y elegancia del entorno.",
+    "images": [
+      "images/Madera/Cocina/Servilletero 2.jpg",
+      "images/Madera/Cocina/Servilletero 2.1.jpg"
+    ],
+    "parent": "madera",
+    "category": "Cocina",
+    "subcategory": ""
+  },
+  {
+    "id": 27,
+    "name": "Servilleteros",
+    "description": "Soportes artesanales para servilletas, elaborados en madera y disponibles en diversos diseños. Aportan orden y un toque rústico a la mesa.",
+    "images": [
+      "images/Madera/Cocina/Servilletero 1.jpg",
+      "images/Madera/Cocina/Servilletero 3.jpg"
+    ],
+    "parent": "madera",
+    "category": "Cocina",
+    "subcategory": ""
+  },
+  {
+    "id": 28,
+    "name": "Juguetes",
+    "description": "Piezas lúdicas elaboradas en madera, pensadas para el juego tradicional y el desarrollo creativo. Hechos a mano con acabados seguros y duraderos.",
+    "images": [
+      "images/Madera/Juguetes/Avión.jpg",
+      "images/Madera/Juguetes/Carro.jpg",
+      "images/Madera/Juguetes/Balero.jpg",
+      "images/Madera/Juguetes/Flauta.jpg"
+    ],
+    "parent": "madera",
+    "category": "Juguetes",
+    "subcategory": ""
   }
 ]

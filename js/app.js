@@ -1,7 +1,5 @@
 const subcategories = {
   Decoración: ["Interior", "Exterior"],
-  Cocina: ["Comales", "Fruteros"],
-  Organización: ["Joyeros"],
 };
 
 function loadPartial(id, file) {
@@ -43,12 +41,15 @@ function renderProducts(products, parent) {
   const productList = document.getElementById("product-list");
   productList.innerHTML = products
     .map((product) => {
+      let productString = `${product.parent}, ${product.category}`;
+      productString +=
+        product.subcategory === "" ? "" : `, ${product.subcategory}`;
       if (parent === "all") {
         return `
             <li class="product-card" data-parent="${product.parent}" data-id="${product.id}">
               <img src="${product.images[0]}" alt="${product.name}" />
               <h3>${product.name}</h3>
-              <p>${product.category}, ${product.subcategory}</p>
+              <p>${productString}</p>
             </li>
             `;
       } else if (product.parent === parent) {
@@ -56,7 +57,7 @@ function renderProducts(products, parent) {
             <li class="product-card" data-parent="${product.parent}" data-id="${product.id}">
               <img src="${product.images[0]}" alt="${product.name}" />
               <h3>${product.name}</h3>
-              <p>${product.category}, ${product.subcategory}</p>
+              <p>${productString}</p>
             </li>
             `;
       }
@@ -197,7 +198,7 @@ function initProducts(products, parent) {
 }
 
 function loadProducts(parent) {
-  fetch("partials/products.html")
+  fetch(`partials/${parent}.html`)
     .then((res) => res.text())
     .then((html) => {
       document.getElementById("main-content").innerHTML = html;
