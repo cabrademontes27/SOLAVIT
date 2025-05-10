@@ -85,7 +85,8 @@
     "description": "Conjunto decorativo de tazas en miniatura, elaboradas artesanalmente, ideales para colecciones o detalles personalizados.",
     "images": [
       "images/Barro/Decoración/Interior/Juego de mini tazas.jpg",
-      "images/Barro/Decoración/Interior/Juego de tazas miniatura.jpg"
+      "images/Barro/Decoración/Interior/Juego de tazas miniatura.jpg",
+      "images/Barro/Decoración/Interior/Mini taza.jpg"
     ],
     "parent": "barro",
     "category": "Decoración",
@@ -120,8 +121,8 @@
     "name": "Faros",
     "description": "Objetos decorativos, inspirados en formas de iluminación tradicional. Aportan un ambiente cálido y acogedor.",
     "images": [
-      "images/Barro/Decoración/Interior/faro_2.jpg",
-      "images/Barro/Decoración/Interior/faro_1.jpg"
+      "images/Barro/Decoración/Interior/Faro 1.jpg",
+      "images/Barro/Decoración/Interior/Faro 2.jpg"
     ],
     "parent": "barro",
     "category": "Decoración",
@@ -181,7 +182,7 @@
     "description": "Reproducciones en barro de planchas antiguas, utilizadas como elementos decorativos que evocan la vida doméstica tradicional.",
     "images": [
       "images/Barro/Decoración/Interior/Planca 1.jpg",
-      "images/Barro/Decoración/Interior/plancha.jpg",
+      "images/Barro/Decoración/Interior/Planca 2.jpg",
       "images/Barro/Decoración/Interior/Planca 2.1.jpg"
     ],
     "parent": "barro",
@@ -205,7 +206,10 @@
     "id": 18,
     "name": "Guitarras",
     "description": "Instrumentos en miniatura elaborados en barro, pintados a mano, ideales para decoración o como recuerdo artesanal.",
-    "images": ["images/placeholder.png"],
+    "images": [
+      "images/Barro/Decoración/Interior/Guitarra 1.jpg",
+      "images/Barro/Decoración/Interior/Guitarra 2.jpg"
+    ],
     "parent": "barro",
     "category": "Decoración",
     "subcategory": "Interior"
@@ -381,9 +385,7 @@
     "id": 32,
     "name": "Collares",
     "description": "Accesorios que fusionan tradición y creatividad. Ideales para realzar el cuello con elegancia.",
-    "images": [
-      "images/Bisuteria/Collar cereza.jpg"
-    ],
+    "images": ["images/Bisuteria/Collar cereza.jpg"],
     "parent": "bisuteria",
     "category": "",
     "subcategory": ""
