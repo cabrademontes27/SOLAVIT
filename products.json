@@ -288,9 +288,7 @@
     "id": 25,
     "name": "Palitas",
     "description": "Accesorios versátiles, elaborados en madera, utilizados para mezclar, servir o manipular alimentos con practicidad y cuidado.",
-    "images": [
-      "images/Madera/Cocina/Palitas de cocina.jpg"
-    ],
+    "images": ["images/Madera/Cocina/Palitas de cocina.jpg"],
     "parent": "madera",
     "category": "Cocina",
     "subcategory": ""
@@ -331,6 +329,63 @@
     ],
     "parent": "madera",
     "category": "Juguetes",
+    "subcategory": ""
+  },
+  {
+    "id": 29,
+    "name": "Canastas",
+    "description": "Estructuras tejidas en bejuco, ideales para almacenamiento o decoración. Cada pieza refleja técnicas tradicionales y un trabajo manual detallado que aporta calidez y funcionalidad a cualquier espacio. Disponible en diferentes tamaños y diseños.",
+    "images": [
+      "images/Bejuco/Canasta bejuco 4.jpg",
+      "images/Bejuco/Canasta bejuco 1.jpg",
+      "images/Bejuco/Canasta bejuco 2.jpg",
+      "images/Bejuco/Canasta bejuco 3.jpg",
+      "images/Bejuco/Canasta bejuco 5.jpg"
+    ],
+    "parent": "bejuco",
+    "category": "",
+    "subcategory": ""
+  },
+  {
+    "id": 30,
+    "name": "Pulseras",
+    "description": "Diseños únicos confeccionados con cuentas, hilos y elementos decorativos. Cada pulsera destaca por su detalle artesanal y versatilidad en el uso diario.",
+    "images": [
+      "images/Bisuteria/Pulsera 1.jpg",
+      "images/Bisuteria/Pulsera 2.jpg",
+      "images/Bisuteria/Pulsera 3.jpg",
+      "images/Bisuteria/Pulsera 4.jpg",
+      "images/Bisuteria/Pulsera 5.jpg",
+      "images/Bisuteria/Pulsera 6.jpg",
+      "images/Bisuteria/Pulsera 7.jpg",
+      "images/Bisuteria/Pulseras.jpg",
+      "images/Bisuteria/Pulsera 2.jpg"
+    ],
+    "parent": "bisuteria",
+    "category": "",
+    "subcategory": ""
+  },
+  {
+    "id": 31,
+    "name": "Aretes",
+    "description": "Accesorios ligeros y cuidadosamente elaborados, disponibles en diversos estilos y colores. Perfectos para complementar cualquier atuendo con un toque distintivo.",
+    "images": [
+      "images/Bisuteria/Aretes 1.jpg",
+      "images/Bisuteria/Aretes 2.jpg"
+    ],
+    "parent": "bisuteria",
+    "category": "",
+    "subcategory": ""
+  },
+  {
+    "id": 32,
+    "name": "Collares",
+    "description": "Accesorios que fusionan tradición y creatividad. Ideales para realzar el cuello con elegancia.",
+    "images": [
+      "images/Bisuteria/Collar cereza.jpg"
+    ],
+    "parent": "bisuteria",
+    "category": "",
     "subcategory": ""
   }
 ]

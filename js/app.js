@@ -33,15 +33,12 @@ function loadStylesheet(stylesheet, callback) {
 }
 
 function renderProducts(products, parent) {
-  // load title corresponding to parent
-  const productTitle = document.getElementById("product-title");
-  productTitle.innerHTML = parent === "all" ? "Artesanías" : `${parent}`;
-
   // load products
   const productList = document.getElementById("product-list");
   productList.innerHTML = products
     .map((product) => {
-      let productString = `${product.parent}, ${product.category}`;
+      let productString = product.parent;
+      productString += product.category === "" ? "" : `, ${product.category}`;
       productString +=
         product.subcategory === "" ? "" : `, ${product.subcategory}`;
       if (parent === "all") {
@@ -96,9 +93,12 @@ function showProductDetail(product) {
 
   //product info
   const sectionTag = document.getElementById("product-info");
+  let categories = product.parent;
+  categories += product.category === "" ? "" : `, ${product.category}`;
+  categories += product.subcategory === "" ? "" : `, ${product.subcategory}`;
   sectionTag.innerHTML = `
     <h1>${product.name}</h1>
-    <h2>${product.category}, ${product.subcategory}</h2>
+    <h2>${categories}</h2>
     <p>${product.description}<p>
     `;
 
