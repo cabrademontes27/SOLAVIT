@@ -74,8 +74,10 @@
 }
 
 #main-content .img-container {
-    max-width: 140px;
-    max-height: 140px;
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 80px;
+    overflow: clip;
 }
 
 #main-content img {
