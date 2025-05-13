@@ -10,7 +10,7 @@ function loadPartial(id, file) {
     });
 }
 
-function loadStylesheet(stylesheet, callback) {
+function loadStylesheet(stylesheet) {
   const previous = document.querySelector('link[data-dinamico="true"]');
   if (previous) previous.remove();
 
@@ -18,12 +18,6 @@ function loadStylesheet(stylesheet, callback) {
   link.rel = "stylesheet";
   link.href = `css/${stylesheet}`;
   link.setAttribute("data-dinamico", "true");
-
-  link.onload = function () {
-    if (typeof callback === "function") {
-      callback();
-    }
-  };
 
   link.onerror = function () {
     console.error(`Error loading stylesheet: ${stylesheet}`);
@@ -216,10 +210,15 @@ function loadProducts(parent) {
     });
 }
 
-function navigateTo() {
+async function navigateTo() {
   const hash = window.location.hash.replace("#", "");
   // reset scroll
   window.scrollTo(0, 0);
+
+  const mainContent = document.getElementById("main-content");
+  mainContent.innerHTML = "";
+
+  await new Promise(resolve => setTimeout(resolve, 300));
 
   const view = hash.split("/");
 
@@ -234,34 +233,28 @@ function navigateTo() {
   switch (view[0]) {
     case "products":
       const parent = view[1];
-      loadStylesheet("products.css", function () {
-        loadProducts(parent);
-      });
+      loadStylesheet("products.css");
+      loadProducts(parent);
       break;
     case "about-us":
-      loadStylesheet("about_us.css", function () {
-        loadPartial("main-content", "about-us.html");
-      });
+      loadStylesheet("about_us.css");
+      loadPartial("main-content", "about-us.html");
       break;
     case "questions":
-      loadStylesheet("questions.css", function () {
-        loadPartial("main-content", "questions.html");
-      });
+      loadStylesheet("questions.css");
+      loadPartial("main-content", "questions.html");
       break;
     case "creators":
-      loadStylesheet("creators.css", function () {
-        loadPartial("main-content", "creators.html");
-      });
+      loadStylesheet("creators.css");
+      loadPartial("main-content", "creators.html");
       break;
     case "impact":
-      loadStylesheet("impact.css", function () {
-        loadPartial("main-content", "impact.html");
-      });
+      loadStylesheet("impact.css");
+      loadPartial("main-content", "impact.html");
       break;
     default:
-      loadStylesheet("home.css", function () {
-        loadPartial("main-content", "home.html");
-      });
+      loadStylesheet("home.css");
+      loadPartial("main-content", "home.html");
   }
 }
 
