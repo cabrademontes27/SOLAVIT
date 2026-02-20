@@ -222,20 +222,7 @@ async function navigateTo() {
 
   const view = hash.split("/");
 
-  // product detail view
-  if (view[2]) {
-    const productId = view[2];
-    loadStylesheet("product-detail.css");
-    loadProductDetailById(productId);
-    return;
-  }
-
   switch (view[0]) {
-    case "products":
-      const parent = view[1];
-      loadStylesheet("products.css");
-      loadProducts(parent);
-      break;
     case "about-us":
       loadStylesheet("about_us.css");
       loadPartial("main-content", "about-us.html");
@@ -252,6 +239,16 @@ async function navigateTo() {
       loadStylesheet("impact.css");
       loadPartial("main-content", "impact.html");
       break;
+    case "donate":
+      loadStylesheet("donate.css");
+      loadPartial("main-content", "donate.html");
+      break;
+    case "education":
+      loadStylesheet("education.css");
+      loadPartial("main-content", "education.html");
+      break;
+    case "":
+    case "home":
     default:
       loadStylesheet("home.css");
       loadPartial("main-content", "home.html");
