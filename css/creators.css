@@ -11,7 +11,7 @@
 }
 
 #main-content .intro {
-    background-color: var(--barroBackground);
+    background-color: var(--azul-noche);
     color: white;
     padding: 50px;
 }

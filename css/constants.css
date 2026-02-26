@@ -1,11 +1,14 @@
 :root {
-    --arcilla: #E87A5D;
-    --newArcilla: #C35B48;
-    --logoBackground: #FDFCE7;
-    --newBackground: #F4E8D1;
-    --footerBackground: #D86B4C;
-    --headerBackground: rgba(232, 122, 93, 0.20);
-    --darkBarro: #4A2B20;
-    --barroBackground: #7A4936;
+    --rojo-vino: #9B1C1C;
+    --azul-noche: #162D55;
+    --azul-acero: #3B6EA5;
+    --azul-claro: #EAF1FB;
+    --gris-perla: #E8E8E8;
+
+    --newBackground: var(--azul-claro);
+    --footerBackground: var(--azul-noche);
+    --headerBackground: var(--gris-perla);
+    --arcilla: var(--azul-acero);
+    --darkBarro: var(--azul-noche);
     --pageUrl: 'matsin-web-page'
 }

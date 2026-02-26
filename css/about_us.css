@@ -8,13 +8,19 @@
 }
 
 #main-content .hero {
-    background-image: url("/matsin-web-page/images/varios/Nosotros.jpg"), url("/images/varios/Nosotros.jpg");
-    background-size: cover;
-    background-position: center 60%;
-    min-height: 40svh;
-
     position: relative;
-    isolation: isolate;
+    background-color: var(--azul-noche);
+    min-height: 15svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#main-content .hero h1 {
+    color: white;
+    text-align: center;
+    margin: 0;
+    font-size: 2.5rem;
 }
 
 #main-content .hero::after {
@@ -35,7 +41,6 @@
 }
 
 #main-content section h1 {
-    text-align: left;
     margin-bottom: 20px;
 }
 
@@ -59,32 +64,46 @@
     max-width: 800px;
 }
 
-@media (width <= 1320px) {
+@media (width <=1320px) {
     #main-content .info-text {
         max-width: 600px;
     }
 }
 
+#main-content .values {
+    text-align: center;
+}
+
 #main-content .values ul {
     list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 0;
     margin-top: 40px;
 }
 
 #main-content .values ul>li {
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 30px;
+    flex: 1 1 300px;
+    max-width: 400px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    margin-bottom: 60px;
-    gap: 2rem;
-    margin-inline: auto;
+    text-align: center;
+    gap: 15px;
+    margin: 0;
 }
 
-#main-content .value-img {
-    max-width: 300px;
-    aspect-ratio: 5/4;
+#main-content .values ul>li h2 {
+    color: var(--azul-noche);
+    margin-bottom: 10px;
 }
 
 #main-content .value-text {
-    max-width: 800px;
+    max-width: 100%;
 }

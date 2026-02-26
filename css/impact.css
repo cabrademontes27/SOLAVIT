@@ -41,6 +41,6 @@
 }
 
 #main-content .ambiental {
-    background-color: #b05d39;
+    background-color: var(--azul-noche);
     color: white;
 }
