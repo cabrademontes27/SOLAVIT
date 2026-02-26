@@ -247,6 +247,10 @@ async function navigateTo() {
       loadStylesheet("education.css");
       loadPartial("main-content", "education.html");
       break;
+    case "documentation":
+      loadStylesheet("documentation.css");
+      loadPartial("main-content", "documentation.html");
+      break;
     case "":
     case "home":
     default:

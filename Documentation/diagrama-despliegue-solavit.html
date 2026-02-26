@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagrama de Despliegue — SOLAVIT</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,600;1,300&family=IBM+Plex+Sans:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #0d1117;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 24px 16px 40px;
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+
+    .title-bar {
+      width: 100%;
+      max-width: 1380px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .title-bar h1 {
+      font-family: 'IBM Plex Mono', monospace;
+      color: #e6edf3;
+      font-size: 1.15rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+
+    .title-bar h1 span {
+      color: #3fb950;
+      font-weight: 600;
+    }
+
+    .title-bar p {
+      font-family: 'IBM Plex Mono', monospace;
+      color: #6e7681;
+      font-size: .72rem;
+      letter-spacing: .5px;
+    }
+
+    .diagram-wrapper {
+      width: 100%;
+      max-width: 1380px;
+      overflow-x: auto;
+      border: 1px solid #21262d;
+      border-radius: 12px;
+      background: #0d1117;
+    }
+
+    svg {
+      display: block;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .legend-bar {
+      width: 100%;
+      max-width: 1380px;
+      margin-top: 16px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .leg {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: .7rem;
+      color: #8b949e;
+    }
+
+    .leg-line {
+      width: 32px;
+      height: 2px;
+    }
+
+    .leg-box {
+      width: 14px;
+      height: 14px;
+      border-radius: 2px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="title-bar">
+    <div>
+      <h1>«deployment» <span>Solavit</span> — Sistema de Logística de Donación de Medicamentos</h1>
+      <p>UML Deployment Diagram · Arquitectura de Microservicios · v1.0</p>
+    </div>
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#484f58;">Diagrama de Despliegue</p>
+  </div>
+
+  <div class="diagram-wrapper">
+    <svg width="1380" height="1020" viewBox="0 0 1380 1020" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- Arrow markers -->
+        <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#8b949e" />
+        </marker>
+        <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#3fb950" />
+        </marker>
+        <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#58a6ff" />
+        </marker>
+        <marker id="arrow-amber" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#e3b341" />
+        </marker>
+        <marker id="arrow-teal" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#39d353" />
+        </marker>
+        <!-- Grid pattern -->
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#161b22" stroke-width="1" />
+        </pattern>
+      </defs>
+
+      <!-- Background -->
+      <rect width="1380" height="1020" fill="#0d1117" />
+      <rect width="1380" height="1020" fill="url(#grid)" />
+
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <!-- LAYER BACKGROUND BANDS -->
+      <!-- ═══════════════════════════════════════════════════════ -->
+
+      <!-- Infra wrapper (entire bottom) -->
+      <rect x="16" y="740" width="1348" height="264" rx="10" fill="none" stroke="#1f3b2a" stroke-width="1.5"
+        stroke-dasharray="8,4" />
+      <text x="26" y="758" fill="#3fb950" font-size="10" font-weight="600" letter-spacing="1.5" opacity=".7">«execution
+        environment» INFRAESTRUCTURA CLOUD · Docker + Kubernetes</text>
+
+      <!-- Data layer background -->
+      <rect x="24" y="610" width="1332" height="122" rx="8" fill="#0a0f1a" stroke="#1c2a3a" stroke-width="1.5"
+        stroke-dasharray="5,3" />
+      <text x="34" y="624" fill="#58a6ff" font-size="9.5" font-weight="600" letter-spacing="1.5" opacity=".7">«layer»
+        CAPA DE DATOS</text>
+
+      <!-- Services layer background -->
+      <rect x="24" y="440" width="1332" height="158" rx="8" fill="#0a0a14" stroke="#1e1a2e" stroke-width="1.5"
+        stroke-dasharray="5,3" />
+      <text x="34" y="455" fill="#a371f7" font-size="9.5" font-weight="600" letter-spacing="1.5" opacity=".7">«layer»
+        CAPA DE MICROSERVICIOS · Backend Business Logic</text>
+
+      <!-- Gateway layer background -->
+      <rect x="24" y="300" width="1332" height="130" rx="8" fill="#0a0f0a" stroke="#1a2e1a" stroke-width="1.5"
+        stroke-dasharray="5,3" />
+      <text x="34" y="315" fill="#3fb950" font-size="9.5" font-weight="600" letter-spacing="1.5" opacity=".7">«layer»
+        API GATEWAY + AUTENTICACIÓN</text>
+
+      <!-- Client layer background -->
+      <rect x="24" y="30" width="1332" height="200" rx="8" fill="#0e1117" stroke="#21262d" stroke-width="1.5"
+        stroke-dasharray="5,3" />
+      <text x="34" y="46" fill="#8b949e" font-size="9.5" font-weight="600" letter-spacing="1.5" opacity=".7">«layer»
+        CAPA DE CLIENTES · User Interfaces</text>
+
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <!-- LAYER 1: CLIENTS -->
+      <!-- ═══════════════════════════════════════════════════════ -->
+
+      <!-- Node: Dispositivo Móvil - Donante -->
+      <!-- 3D node effect: shadow rect + main rect -->
+      <rect x="74" y="62" width="320" height="152" rx="0" fill="#1a1a2a" stroke="#3d444d" stroke-width="0" />
+      <rect x="70" y="58" width="320" height="152" rx="4" fill="#161b22" stroke="#3d444d" stroke-width="1.5" />
+      <!-- Node header with 3D tab -->
+      <rect x="70" y="58" width="320" height="28" rx="4" fill="#1c2128" stroke="#3d444d" stroke-width="1.5" />
+      <rect x="70" y="72" width="320" height="14" fill="#1c2128" />
+      <!-- Stereotype + name -->
+      <text x="82" y="70" fill="#8b949e" font-size="9" font-style="italic">«device»</text>
+      <text x="82" y="83" fill="#e6edf3" font-size="11" font-weight="600">Dispositivo Móvil : iOS / Android</text>
+      <!-- Component inside -->
+      <!-- component box -->
+      <rect x="90" y="100" width="280" height="94" rx="4" fill="#0d1117" stroke="#3fb950" stroke-width="1.2" />
+      <!-- component icon (2 small rects on left) -->
+      <rect x="84" y="118" width="12" height="8" rx="1" fill="#1c2128" stroke="#3fb950" stroke-width="1" />
+      <rect x="80" y="115" width="12" height="8" rx="1" fill="#1c2128" stroke="#3fb950" stroke-width="1" />
+      <text x="100" y="116" fill="#8b949e" font-size="8.5" font-style="italic">«component»</text>
+      <text x="100" y="129" fill="#3fb950" font-size="12" font-weight="600">App Móvil — Donante</text>
+      <line x1="90" y1="135" x2="370" y2="135" stroke="#21262d" stroke-width="1" />
+      <text x="100" y="149" fill="#6e7681" font-size="9.5">+ agendarDonacion()</text>
+      <text x="100" y="163" fill="#6e7681" font-size="9.5">+ registrarMedicamento()</text>
+      <text x="100" y="177" fill="#6e7681" font-size="9.5">+ seleccionarCentro()</text>
+      <!-- Tech tag -->
+      <rect x="246" y="105" width="116" height="16" rx="3" fill="#1c3a2a" stroke="#3fb950" stroke-width=".8" />
+      <text x="252" y="116" fill="#3fb950" font-size="8.5">Flutter / React Native</text>
+
+      <!-- Node: Dispositivo Móvil - Beneficiario -->
+      <rect x="534" y="62" width="320" height="152" rx="0" fill="#1a1a2a" stroke="#3d444d" stroke-width="0" />
+      <rect x="530" y="58" width="320" height="152" rx="4" fill="#161b22" stroke="#3d444d" stroke-width="1.5" />
+      <rect x="530" y="58" width="320" height="28" rx="4" fill="#1c2128" stroke="#3d444d" stroke-width="1.5" />
+      <rect x="530" y="72" width="320" height="14" fill="#1c2128" />
+      <text x="542" y="70" fill="#8b949e" font-size="9" font-style="italic">«device»</text>
+      <text x="542" y="83" fill="#e6edf3" font-size="11" font-weight="600">Dispositivo Móvil : iOS / Android</text>
+      <rect x="550" y="100" width="280" height="94" rx="4" fill="#0d1117" stroke="#58a6ff" stroke-width="1.2" />
+      <rect x="544" y="118" width="12" height="8" rx="1" fill="#1c2128" stroke="#58a6ff" stroke-width="1" />
+      <rect x="540" y="115" width="12" height="8" rx="1" fill="#1c2128" stroke="#58a6ff" stroke-width="1" />
+      <text x="560" y="116" fill="#8b949e" font-size="8.5" font-style="italic">«component»</text>
+      <text x="560" y="129" fill="#58a6ff" font-size="12" font-weight="600">App Móvil — Beneficiario</text>
+      <line x1="550" y1="135" x2="830" y2="135" stroke="#21262d" stroke-width="1" />
+      <text x="560" y="149" fill="#6e7681" font-size="9.5">+ buscarMedicamento()</text>
+      <text x="560" y="163" fill="#6e7681" font-size="9.5">+ solicitarMedicamento()</text>
+      <text x="560" y="177" fill="#6e7681" font-size="9.5">+ agendarRetiro()</text>
+      <rect x="706" y="105" width="116" height="16" rx="3" fill="#1c2a3a" stroke="#58a6ff" stroke-width=".8" />
+      <text x="712" y="116" fill="#58a6ff" font-size="8.5">Flutter / React Native</text>
+
+      <!-- Node: PC / Web Browser - Operador -->
+      <rect x="990" y="62" width="340" height="152" rx="0" fill="#1a1a2a" stroke="#3d444d" stroke-width="0" />
+      <rect x="986" y="58" width="340" height="152" rx="4" fill="#161b22" stroke="#3d444d" stroke-width="1.5" />
+      <rect x="986" y="58" width="340" height="28" rx="4" fill="#1c2128" stroke="#3d444d" stroke-width="1.5" />
+      <rect x="986" y="72" width="340" height="14" fill="#1c2128" />
+      <text x="998" y="70" fill="#8b949e" font-size="9" font-style="italic">«device»</text>
+      <text x="998" y="83" fill="#e6edf3" font-size="11" font-weight="600">PC : Web Browser</text>
+      <rect x="1006" y="100" width="300" height="94" rx="4" fill="#0d1117" stroke="#e3b341" stroke-width="1.2" />
+      <rect x="1000" y="118" width="12" height="8" rx="1" fill="#1c2128" stroke="#e3b341" stroke-width="1" />
+      <rect x="996" y="115" width="12" height="8" rx="1" fill="#1c2128" stroke="#e3b341" stroke-width="1" />
+      <text x="1016" y="116" fill="#8b949e" font-size="8.5" font-style="italic">«component»</text>
+      <text x="1016" y="129" fill="#e3b341" font-size="12" font-weight="600">Panel Web — Operador</text>
+      <line x1="1006" y1="135" x2="1306" y2="135" stroke="#21262d" stroke-width="1" />
+      <text x="1016" y="149" fill="#6e7681" font-size="9.5">+ verificarDonacion()</text>
+      <text x="1016" y="163" fill="#6e7681" font-size="9.5">+ gestionarStock()</text>
+      <text x="1016" y="177" fill="#6e7681" font-size="9.5">+ verPerfilUsuario()</text>
+      <rect x="1228" y="105" width="70" height="16" rx="3" fill="#2a2a1a" stroke="#e3b341" stroke-width=".8" />
+      <text x="1236" y="116" fill="#e3b341" font-size="8.5">React.js</text>
+
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <!-- CONNECTIONS: CLIENTS → GATEWAY -->
+      <!-- Label: HTTPS / REST / TLS 1.3 -->
+      <!-- ═══════════════════════════════════════════════════════ -->
+
+      <!-- Connection annotation banner -->
+      <rect x="300" y="243" width="430" height="20" rx="3" fill="#0d1117" stroke="#21262d" stroke-width="1" />
+      <text x="307" y="255" fill="#6e7681" font-size="9" letter-spacing=".3px">HTTPS · REST · JWT Bearer Token · TLS
+        1.3</text>
+
+      <!-- Lines client → gateway -->
+      <line x1="230" y1="210" x2="400" y2="300" stroke="#3fb950" stroke-width="1.5" stroke-dasharray="none"
+        marker-end="url(#arrow-green)" opacity=".7" />
+      <line x1="690" y1="210" x2="660" y2="300" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#arrow-blue)"
+        opacity=".7" />
+      <line x1="1160" y1="210" x2="1000" y2="300" stroke="#e3b341" stroke-width="1.5" marker-end="url(#arrow-amber)"
+        opacity=".7" />
+
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <!-- LAYER 2: API GATEWAY -->
+      <!-- ═══════════════════════════════════════════════════════ -->
+
+      <!-- API Gateway Node -->
+      <rect x="38" y="322" width="790" height="100" rx="0" fill="#1a2a1a" stroke="#3d444d" stroke-width="0" />
+      <rect x="34" y="318" width="790" height="100" rx="4" fill="#161b22" stroke="#3fb950" stroke-width="1.8" />
+      <rect x="34" y="318" width="790" height="26" rx="4" fill="#1a2618" stroke="#3fb950" stroke-width="1.8" />
+      <rect x="34" y="331" width="790" height="13" fill="#1a2618" />
+      <text x="46" y="329" fill="#6e7681" font-size="9" font-style="italic">«server node»</text>
+      <text x="46" y="341" fill="#3fb950" font-size="11" font-weight="600">Servidor : API Gateway</text>
+
+      <!-- Component: Kong/API Gateway -->
+      <rect x="48" y="352" width="260" height="54" rx="4" fill="#0d1117" stroke="#3fb950" stroke-width="1.1" />
+      <rect x="42" y="365" width="12" height="8" rx="1" fill="#161b22" stroke="#3fb950" stroke-width="1" />
+      <rect x="38" y="362" width="12" height="8" rx="1" fill="#161b22" stroke="#3fb950" stroke-width="1" />
+      <text x="58" y="363" fill="#8b949e" font-size="8" font-style="italic">«component»</text>
+      <text x="58" y="375" fill="#3fb950" font-size="10.5" font-weight="600">API Gateway</text>
+      <line x1="48" y1="380" x2="308" y2="380" stroke="#21262d" stroke-width="1" />
+      <text x="58" y="391" fill="#6e7681" font-size="8.5">Routing · Rate Limiting · RBAC</text>
+      <text x="58" y="401" fill="#6e7681" font-size="8.5">Kong / AWS API Gateway</text>
+
+      <!-- Component: Auth Service -->
+      <rect x="328" y="352" width="260" height="54" rx="4" fill="#0d1117" stroke="#a371f7" stroke-width="1.1" />
+      <rect x="322" y="365" width="12" height="8" rx="1" fill="#161b22" stroke="#a371f7" stroke-width="1" />
+      <rect x="318" y="362" width="12" height="8" rx="1" fill="#161b22" stroke="#a371f7" stroke-width="1" />
+      <text x="338" y="363" fill="#8b949e" font-size="8" font-style="italic">«component»</text>
+      <text x="338" y="375" fill="#a371f7" font-size="10.5" font-weight="600">Auth Service</text>
+      <line x1="328" y1="380" x2="588" y2="380" stroke="#21262d" stroke-width="1" />
+      <text x="338" y="391" fill="#6e7681" font-size="8.5">JWT · OAuth2 · Refresh Tokens</text>
+      <text x="338" y="401" fill="#6e7681" font-size="8.5">Roles: donante · beneficiario · operador</text>
+
+      <!-- Component: Load Balancer -->
+      <rect x="608" y="352" width="200" height="54" rx="4" fill="#0d1117" stroke="#3fb950" stroke-width="1.1" />
+      <rect x="602" y="365" width="12" height="8" rx="1" fill="#161b22" stroke="#3fb950" stroke-width="1" />
+      <rect x="598" y="362" width="12" height="8" rx="1" fill="#161b22" stroke="#3fb950" stroke-width="1" />
+      <text x="618" y="363" fill="#8b949e" font-size="8" font-style="italic">«component»</text>
+      <text x="618" y="375" fill="#3fb950" font-size="10.5" font-weight="600">Load Balancer</text>
+      <line x1="608" y1="380" x2="808" y2="380" stroke="#21262d" stroke-width="1" />
+      <text x="618" y="391" fill="#6e7681" font-size="8.5">Distribución de carga</text>
+      <text x="618" y="401" fill="#6e7681" font-size="8.5">Nginx / AWS ALB</text>
+
+      <!-- RBAC info box -->
+      <rect x="844" y="318" width="252" height="100" rx="4" fill="#161b22" stroke="#e3b341" stroke-width="1.2" />
+      <rect x="844" y="318" width="252" height="26" rx="4" fill="#1e1a10" stroke="#e3b341" stroke-width="1.2" />
+      <rect x="844" y="331" width="252" height="13" fill="#1e1a10" />
+      <text x="856" y="329" fill="#6e7681" font-size="9" font-style="italic">«security»</text>
+      <text x="856" y="341" fill="#e3b341" font-size="11" font-weight="600">Control de Acceso (RBAC)</text>
+      <text x="856" y="360" fill="#6e7681" font-size="9.5">ROL: donante</text>
+      <text x="856" y="372" fill="#6e7681" font-size="9.5"> → App donaciones, historial</text>
+      <text x="856" y="386" fill="#6e7681" font-size="9.5">ROL: beneficiario</text>
+      <text x="856" y="398" fill="#6e7681" font-size="9.5"> → App solicitudes</text>
+      <text x="856" y="412" fill="#6e7681" font-size="9.5">ROL: operador → Panel web completo</text>
+
+      <!-- Connection gateway → services label -->
+      <rect x="400" y="432" width="280" height="18" rx="3" fill="#0d1117" stroke="#21262d" stroke-width="1" />
+      <text x="408" y="443" fill="#6e7681" font-size="9">gRPC / REST interno · Conexiones autenticadas</text>
+
+      <!-- Lines gateway → services -->
+      <line x1="220" y1="418" x2="160" y2="462" stroke="#8b949e" stroke-width="1.2" marker-end="url(#arrow)"
+        opacity=".6" />
+      <line x1="380" y1="418" x2="370" y2="462" stroke="#8b949e" stroke-width="1.2" marker-end="url(#arrow)"
+        opacity=".6" />
+      <line x1="510" y1="418" x2="590" y2="462" stroke="#8b949e" stroke-width="1.2" marker-end="url(#arrow)"
+        opacity=".6" />
+      <line x1="640" y1="418" x2="800" y2="462" stroke="#8b949e" stroke-width="1.2" marker-end="url(#arrow)"
+        opacity=".6" />
+      <line x1="740" y1="418" x2="1012" y2="462" stroke="#8b949e" stroke-width="1.2" marker-end="url(#arrow)"
+        opacity=".6" />
+
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <!-- LAYER 3: MICROSERVICES -->
+      <!-- ═══════════════════════════════════════════════════════ -->
+
+      <!-- Helper macro: each service node w=246, h=130, spaced at x=38,294,550,806,1062 -->
+
+      <!-- User Service -->
+      <rect x="42" y="472" width="234" height="118" rx="0" fill="#1a1a26" stroke="none" />
+      <rect x="38" y="468" width="234" height="118" rx="4" fill="#161b22" stroke="#a371f7" stroke-width="1.5" />
+      <rect x="38" y="468" width="234" height="24" rx="4" fill="#1a1627" stroke="#a371f7" stroke-width="1.5" />
+      <rect x="38" y="479" width="234" height="13" fill="#1a1627" />
+      <text x="50" y="478" fill="#8b949e" font-size="8.5" font-style="italic">«microservice»</text>
+      <text x="50" y="489" fill="#a371f7" font-size="10.5" font-weight="600">User Service</text>
+      <rect x="50" y="500" width="208" height="74" rx="3" fill="#0d1117" stroke="#a371f7" stroke-width=".8" />
+      <text x="60" y="514" fill="#8b949e" font-size="8.5" font-style="italic">«component»</text>
+      <text x="60" y="526" fill="#a371f7" font-size="9.5" font-weight="600">UserManagement</text>
+      <line x1="50" y1="530" x2="258" y2="530" stroke="#21262d" stroke-width="1" />
+      <text x="58" y="542" fill="#6e7681" font-size="8.5">+ getPerfilUsuario()</text>
+      <text x="58" y="553" fill="#6e7681" font-size="8.5">+ getHistorialDonaciones()</text>
+      <text x="58" y="564" fill="#6e7681" font-size="8.5">+ getHistorialSolicitudes()</text>
+      <rect x="178" y="503" width="74" height="14" rx="2" fill="#1a1627" stroke="#a371f7" stroke-width=".7" />
+      <text x="184" y="513" fill="#a371f7" font-size="7.5">Node.js/Express</text>
+
+      <!-- Medication Service -->
+      <rect x="294" y="472" width="234" height="118" rx="0" fill="#1a1a26" stroke="none" />
+      <rect x="290" y="468" width="234" height="118" rx="4" fill="#161b22" stroke="#a371f7" stroke-width="1.5" />
+      <rect x="290" y="468" width="234" height="24" rx="4" fill="#1a1627" stroke="#a371f7" stroke-width="1.5" />
+      <rect x="290" y="479" width="234" height="13" fill="#1a1627" />
+      <text x="302" y="478" fill="#8b949e" font-size="8.5" font-style="italic">«microservice»</text>
+      <text x="302" y="489" fill="#a371f7" font-size="10.5" font-weight="600">Medication Service</text>
+      <rect x="302" y="500" width="210" height="74" rx="3" fill="#0d1117" stroke="#a371f7" stroke-width=".8" />
+      <text x="312" y="514" fill="#8b949e" font-size="8.5" font-style="italic">«component»</text>
+      <text x="312" y="526" fill="#a371f7" font-size="9.5" font-weight="600">MedicamentoCatalogo</text>
+      <line x1="302" y1="530" x2="512" y2="530" stroke="#21262d" stroke-width="1" />
+      <text x="310" y="542" fill="#6e7681" font-size="8.5">+ registrarMedicamento()</text>
+      <text x="310" y="553" fill="#6e7681" font-size="8.5">+ validarCaducidad()</text>
+      <text x="310" y="564" fill="#6e7681" font-size="8.5">+ requiereReceta(): bool</text>
+      <rect x="430" y="503" width="74" height="14" rx="2" fill="#1a1627" stroke="#a371f7" stroke-width=".7" />
+      <text x="436" y="513" fill="#a371f7" font-size="7.5">Node.js/Express</text>
+
+      <!-- Inventory Service -->
+      <rect x="546" y="472" width="248" height="118" rx="0" fill="#1a1a26" stroke="none" />
+      <rect x="542" y="468" width="248" height="118" rx="4" fill="#161b22" stroke="#3fb950" stroke-width="2" />
+      <rect x="542" y="468" width="248" height="24" rx="4" fill="#142214" stroke="#3fb950" stroke-width="2" />
+      <rect x="542" y="479" width="248" height="13" fill="#142214" />
+      <text x="554" y="478" fill="#8b949e" font-size="8.5" font-style="italic">«microservice» «critical»</text>
+      <text x="554" y="489" fill="#3fb950" font-size="10.5" font-weight="600">Inventory Service</text>
+      <rect x="554" y="500" width="222" height="74" rx="3" fill="#0d1117" stroke="#3fb950" stroke-width=".8" />
+      <text x="564" y="514" fill="#8b949e" font-size="8.5" font-style="italic">«component»</text>
+      <text x="564" y="526" fill="#3fb950" font-size="9.5" font-weight="600">StockManager</text>
+      <line x1="554" y1="530" x2="776" y2="530" stroke="#21262d" stroke-width="1" />
+      <text x="562" y="542" fill="#6e7681" font-size="8.5">+ registrarEntrada(medicamento)</text>
+      <text x="562" y="553" fill="#6e7681" font-size="8.5">+ registrarSalida(medicamento)</text>
+      <text x="562" y="564" fill="#6e7681" font-size="8.5">+ consultarStock(centroId)</text>
+      <rect x="686" y="503" width="82" height="14" rx="2" fill="#142214" stroke="#3fb950" stroke-width=".7" />
+      <text x="692" y="513" fill="#3fb950" font-size="7.5">Node.js / Redis</text>
+
+      <!-- Appointment Service -->
+      <rect x="806" y="472" width="246" height="118" rx="0" fill="#1a1a26" stroke="none" />
+      <rect x="802" y="468" width="246" height="118" rx="4" fill="#161b22" stroke="#a371f7" stroke-width="1.5" />
+      <rect x="802" y="468" width="246" height="24" rx="4" fill="#1a1627" stroke="#a371f7" stroke-width="1.5" />
+      <rect x="802" y="479" width="246" height="13" fill="#1a1627" />
+      <text x="814" y="478" fill="#8b949e" font-size="8.5" font-style="italic">«microservice»</text>
+      <text x="814" y="489" fill="#a371f7" font-size="10.5" font-weight="600">Appointment Service</text>
+      <rect x="814" y="500" width="220" height="74" rx="3" fill="#0d1117" stroke="#a371f7" stroke-width=".8" />
+      <text x="824" y="514" fill="#8b949e" font-size="8.5" font-style="italic">«component»</text>
+      <text x="824" y="526" fill="#a371f7" font-size="9.5" font-weight="600">AgendaManager</text>
+      <line x1="814" y1="530" x2="1034" y2="530" stroke="#21262d" stroke-width="1" />
+      <text x="822" y="542" fill="#6e7681" font-size="8.5">+ agendarCita(userId, fecha)</text>
+      <text x="822" y="553" fill="#6e7681" font-size="8.5">+ confirmarAsistencia()</text>
+      <text x="822" y="564" fill="#6e7681" font-size="8.5">+ estado: pending|done</text>
+      <rect x="932" y="503" width="94" height="14" rx="2" fill="#1a1627" stroke="#a371f7" stroke-width=".7" />
+      <text x="938" y="513" fill="#a371f7" font-size="7.5">Node.js / Postgres</text>
+
+      <!-- Notification Service -->
+      <rect x="1062" y="472" width="286" height="118" rx="0" fill="#1a1a26" stroke="none" />
+      <rect x="1058" y="468" width="286" height="118" rx="4" fill="#161b22" stroke="#39c5c5" stroke-width="1.5" />
+      <rect x="1058" y="468" width="286" height="24" rx="4" fill="#0e1e1e" stroke="#39c5c5" stroke-width="1.5" />
+      <rect x="1058" y="479" width="286" height="13" fill="#0e1e1e" />
+      <text x="1070" y="478" fill="#8b949e" font-size="8.5" font-style="italic">«microservice»</text>
+      <text x="1070" y="489" fill="#39c5c5" font-size="10.5" font-weight="600">Notification Service</text>
+      <rect x="1070" y="500" width="260" height="74" rx="3" fill="#0d1117" stroke="#39c5c5" stroke-width=".8" />
+      <text x="1080" y="514" fill="#8b949e" font-size="8.5" font-style="italic">«component»</text>
+      <text x="1080" y="526" fill="#39c5c5" font-size="9.5" font-weight="600">NotificationDispatcher</text>
+      <line x1="1070" y1="530" x2="1330" y2="530" stroke="#21262d" stroke-width="1" />
+      <text x="1078" y="542" fill="#6e7681" font-size="8.5">+ enviarPush(userId, msg)</text>
+      <text x="1078" y="553" fill="#6e7681" font-size="8.5">+ enviarEmail(to, template)</text>
+      <text x="1078" y="564" fill="#6e7681" font-size="8.5">FCM · SMTP · SendGrid</text>
+      <rect x="1244" y="503" width="78" height="14" rx="2" fill="#0e1e1e" stroke="#39c5c5" stroke-width=".7" />
+      <text x="1250" y="513" fill="#39c5c5" font-size="7.5">Node.js / FCM</text>
+
+      <!-- Connection label services → data -->
+      <rect x="460" y="596" width="240" height="18" rx="3" fill="#0d1117" stroke="#21262d" stroke-width="1" />
+      <text x="468" y="607" fill="#6e7681" font-size="9">ORM · Pool de conexiones · Queries</text>
+
+      <!-- Lines services → data (simplified, going down) -->
+      <line x1="155" y1="586" x2="220" y2="620" stroke="#8b949e" stroke-width="1.1" marker-end="url(#arrow)"
+        opacity=".5" />
+      <line x1="407" y1="586" x2="320" y2="620" stroke="#8b949e" stroke-width="1.1" marker-end="url(#arrow)"
+        opacity=".5" />
+      <line x1="666" y1="586" x2="580" y2="620" stroke="#3fb950" stroke-width="1.3" marker-end="url(#arrow-green)"
+        opacity=".7" />
+      <line x1="925" y1="586" x2="810" y2="620" stroke="#8b949e" stroke-width="1.1" marker-end="url(#arrow)"
+        opacity=".5" />
+      <line x1="1200" y1="586" x2="1110" y2="620" stroke="#8b949e" stroke-width="1.1" marker-end="url(#arrow)"
+        opacity=".5" />
+
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <!-- LAYER 4: DATA -->
+      <!-- ═══════════════════════════════════════════════════════ -->
+
+      <!-- PostgreSQL -->
+      <rect x="42" y="638" width="350" height="84" rx="0" fill="#1a1810" stroke="none" />
+      <rect x="38" y="634" width="350" height="84" rx="4" fill="#161b22" stroke="#e3b341" stroke-width="1.5" />
+      <rect x="38" y="634" width="350" height="24" rx="4" fill="#1a1810" stroke="#e3b341" stroke-width="1.5" />
+      <rect x="38" y="647" width="350" height="11" fill="#1a1810" />
+      <text x="50" y="644" fill="#8b949e" font-size="8.5" font-style="italic">«database» «persistent»</text>
+      <text x="50" y="656" fill="#e3b341" font-size="11" font-weight="600">PostgreSQL — Base de Datos Principal</text>
+      <text x="50" y="673" fill="#6e7681" font-size="8.5">Tablas: usuarios · medicamentos · inventario · citas</text>
+      <text x="50" y="685" fill="#6e7681" font-size="8.5">transacciones · centros_acopio · historial</text>
+      <rect x="50" y="695" width="90" height="14" rx="2" fill="#1a1810" stroke="#e3b341" stroke-width=".7" />
+      <text x="56" y="705" fill="#e3b341" font-size="8">PostgreSQL 15</text>
+      <rect x="154" y="695" width="86" height="14" rx="2" fill="#1a1810" stroke="#e3b341" stroke-width=".7" />
+      <text x="160" y="705" fill="#e3b341" font-size="8">Prisma ORM</text>
+      <rect x="254" y="695" width="82" height="14" rx="2" fill="#1a1810" stroke="#e3b341" stroke-width=".7" />
+      <text x="260" y="705" fill="#e3b341" font-size="8">Backup diario</text>
+
+      <!-- Redis -->
+      <rect x="406" y="638" width="290" height="84" rx="0" fill="#1a1010" stroke="none" />
+      <rect x="402" y="634" width="290" height="84" rx="4" fill="#161b22" stroke="#f47067" stroke-width="1.5" />
+      <rect x="402" y="634" width="290" height="24" rx="4" fill="#1a1010" stroke="#f47067" stroke-width="1.5" />
+      <rect x="402" y="647" width="290" height="11" fill="#1a1010" />
+      <text x="414" y="644" fill="#8b949e" font-size="8.5" font-style="italic">«cache» «in-memory»</text>
+      <text x="414" y="656" fill="#f47067" font-size="11" font-weight="600">Redis — Cache & Sessions</text>
+      <text x="414" y="673" fill="#6e7681" font-size="8.5">Sesiones JWT · Stock cache · Rate limiting</text>
+      <text x="414" y="685" fill="#6e7681" font-size="8.5">Cola de notificaciones · Pub/Sub</text>
+      <rect x="414" y="695" width="68" height="14" rx="2" fill="#1a1010" stroke="#f47067" stroke-width=".7" />
+      <text x="420" y="705" fill="#f47067" font-size="8">Redis 7.x</text>
+      <rect x="496" y="695" width="106" height="14" rx="2" fill="#1a1010" stroke="#f47067" stroke-width=".7" />
+      <text x="502" y="705" fill="#f47067" font-size="8">TTL: 15min / 7d</text>
+
+      <!-- Object Storage (S3) -->
+      <rect x="710" y="638" width="290" height="84" rx="0" fill="#101a1a" stroke="none" />
+      <rect x="706" y="634" width="290" height="84" rx="4" fill="#161b22" stroke="#39c5c5" stroke-width="1.5" />
+      <rect x="706" y="634" width="290" height="24" rx="4" fill="#0c1818" stroke="#39c5c5" stroke-width="1.5" />
+      <rect x="706" y="647" width="290" height="11" fill="#0c1818" />
+      <text x="718" y="644" fill="#8b949e" font-size="8.5" font-style="italic">«storage»</text>
+      <text x="718" y="656" fill="#39c5c5" font-size="11" font-weight="600">Object Storage — S3 / GCS</text>
+      <text x="718" y="673" fill="#6e7681" font-size="8.5">Fotos de medicamentos donados</text>
+      <text x="718" y="685" fill="#6e7681" font-size="8.5">Documentos de validación · CDN</text>
+      <rect x="718" y="695" width="78" height="14" rx="2" fill="#0c1818" stroke="#39c5c5" stroke-width=".7" />
+      <text x="724" y="705" fill="#39c5c5" font-size="8">AWS S3 / GCS</text>
+      <rect x="810" y="695" width="56" height="14" rx="2" fill="#0c1818" stroke="#39c5c5" stroke-width=".7" />
+      <text x="816" y="705" fill="#39c5c5" font-size="8">CloudFront</text>
+
+      <!-- Message Broker -->
+      <rect x="1014" y="638" width="326" height="84" rx="0" fill="#10100a" stroke="none" />
+      <rect x="1010" y="634" width="326" height="84" rx="4" fill="#161b22" stroke="#e3b341" stroke-width="1.5"
+        stroke-dasharray="4,2" />
+      <rect x="1010" y="634" width="326" height="24" rx="4" fill="#1a1800" stroke="#e3b341" stroke-width="1.5"
+        stroke-dasharray="4,2" />
+      <rect x="1010" y="647" width="326" height="11" fill="#1a1800" />
+      <text x="1022" y="644" fill="#8b949e" font-size="8.5" font-style="italic">«message broker» «optional»</text>
+      <text x="1022" y="656" fill="#e3b341" font-size="11" font-weight="600">Message Queue — RabbitMQ / SQS</text>
+      <text x="1022" y="673" fill="#6e7681" font-size="8.5">Cola de notificaciones asíncronas</text>
+      <text x="1022" y="685" fill="#6e7681" font-size="8.5">Eventos: donacion_completada · medicamento_entregado</text>
+      <rect x="1022" y="695" width="100" height="14" rx="2" fill="#1a1800" stroke="#e3b341" stroke-width=".7" />
+      <text x="1028" y="705" fill="#e3b341" font-size="8">RabbitMQ / AWS SQS</text>
+
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <!-- LAYER 5: INFRA -->
+      <!-- ═══════════════════════════════════════════════════════ -->
+
+      <!-- Docker + K8s node -->
+      <rect x="42" y="764" width="290" height="88" rx="0" fill="#0a1a0a" stroke="none" />
+      <rect x="38" y="760" width="290" height="88" rx="4" fill="#161b22" stroke="#3fb950" stroke-width="1.2" />
+      <rect x="38" y="760" width="290" height="22" rx="4" fill="#0a1a0a" stroke="#3fb950" stroke-width="1.2" />
+      <rect x="38" y="771" width="290" height="11" fill="#0a1a0a" />
+      <text x="50" y="769" fill="#8b949e" font-size="8.5" font-style="italic">«container orchestration»</text>
+      <text x="50" y="780" fill="#3fb950" font-size="10.5" font-weight="600">Docker + Kubernetes</text>
+      <text x="50" y="797" fill="#6e7681" font-size="8.5">Pod por microservicio · Auto-scaling HPA</text>
+      <text x="50" y="809" fill="#6e7681" font-size="8.5">Rolling deploys · Health checks</text>
+      <text x="50" y="821" fill="#6e7681" font-size="8.5">ConfigMaps · Secrets · Namespaces</text>
+      <rect x="50" y="832" width="70" height="13" rx="2" fill="#0a1a0a" stroke="#3fb950" stroke-width=".7" />
+      <text x="55" y="841" fill="#3fb950" font-size="7.5">K8s 1.28+</text>
+
+      <!-- CI/CD Pipeline -->
+      <rect x="350" y="764" width="290" height="88" rx="0" fill="#0a1a0a" stroke="none" />
+      <rect x="346" y="760" width="290" height="88" rx="4" fill="#161b22" stroke="#3fb950" stroke-width="1.2" />
+      <rect x="346" y="760" width="290" height="22" rx="4" fill="#0a1a0a" stroke="#3fb950" stroke-width="1.2" />
+      <rect x="346" y="771" width="290" height="11" fill="#0a1a0a" />
+      <text x="358" y="769" fill="#8b949e" font-size="8.5" font-style="italic">«ci/cd»</text>
+      <text x="358" y="780" fill="#3fb950" font-size="10.5" font-weight="600">Pipeline CI/CD</text>
+      <text x="358" y="797" fill="#6e7681" font-size="8.5">GitHub Actions · Tests automatizados</text>
+      <text x="358" y="809" fill="#6e7681" font-size="8.5">Build Docker image · Push registry</text>
+      <text x="358" y="821" fill="#6e7681" font-size="8.5">Deploy: dev → staging → production</text>
+      <rect x="358" y="832" width="118" height="13" rx="2" fill="#0a1a0a" stroke="#3fb950" stroke-width=".7" />
+      <text x="363" y="841" fill="#3fb950" font-size="7.5">GitHub Actions / GitLab</text>
+
+      <!-- Observabilidad -->
+      <rect x="658" y="764" width="290" height="88" rx="0" fill="#0a1a1a" stroke="none" />
+      <rect x="654" y="760" width="290" height="88" rx="4" fill="#161b22" stroke="#39c5c5" stroke-width="1.2" />
+      <rect x="654" y="760" width="290" height="22" rx="4" fill="#0a1a1a" stroke="#39c5c5" stroke-width="1.2" />
+      <rect x="654" y="771" width="290" height="11" fill="#0a1a1a" />
+      <text x="666" y="769" fill="#8b949e" font-size="8.5" font-style="italic">«monitoring»</text>
+      <text x="666" y="780" fill="#39c5c5" font-size="10.5" font-weight="600">Observabilidad</text>
+      <text x="666" y="797" fill="#6e7681" font-size="8.5">Prometheus · Grafana · Alertas stock</text>
+      <text x="666" y="809" fill="#6e7681" font-size="8.5">Logs centralizados · ELK Stack</text>
+      <text x="666" y="821" fill="#6e7681" font-size="8.5">Tracing distribuido · Jaeger</text>
+      <rect x="666" y="832" width="62" height="13" rx="2" fill="#0a1a1a" stroke="#39c5c5" stroke-width=".7" />
+      <text x="671" y="841" fill="#39c5c5" font-size="7.5">Grafana</text>
+
+      <!-- Cloud Provider -->
+      <rect x="960" y="764" width="380" height="88" rx="0" fill="#0a0a1a" stroke="none" />
+      <rect x="956" y="760" width="380" height="88" rx="4" fill="#161b22" stroke="#58a6ff" stroke-width="1.2" />
+      <rect x="956" y="760" width="380" height="22" rx="4" fill="#0a0a1a" stroke="#58a6ff" stroke-width="1.2" />
+      <rect x="956" y="771" width="380" height="11" fill="#0a0a1a" />
+      <text x="968" y="769" fill="#8b949e" font-size="8.5" font-style="italic">«cloud provider»</text>
+      <text x="968" y="780" fill="#58a6ff" font-size="10.5" font-weight="600">Cloud Provider — AWS / GCP / Azure</text>
+      <text x="968" y="797" fill="#6e7681" font-size="8.5">Multi-AZ · Alta disponibilidad · Auto-failover</text>
+      <text x="968" y="809" fill="#6e7681" font-size="8.5">VPC · Subnets privadas · WAF · DDoS Protection</text>
+      <text x="968" y="821" fill="#6e7681" font-size="8.5">Managed DB (RDS) · Managed Cache (ElastiCache)</text>
+      <rect x="968" y="832" width="54" height="13" rx="2" fill="#0a0a1a" stroke="#58a6ff" stroke-width=".7" />
+      <text x="973" y="841" fill="#58a6ff" font-size="7.5">99.9% SLA</text>
+
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <!-- LAYER LABELS ON RIGHT SIDE -->
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <line x1="1368" y1="58" x2="1368" y2="228" stroke="#21262d" stroke-width="1" />
+      <text x="1375" y="148" fill="#484f58" font-size="9" font-weight="600" letter-spacing="1.2" text-anchor="middle"
+        transform="rotate(90,1375,148)">CLIENTES</text>
+
+      <line x1="1368" y1="300" x2="1368" y2="418" stroke="#21262d" stroke-width="1" />
+      <text x="1375" y="359" fill="#484f58" font-size="9" font-weight="600" letter-spacing="1.2" text-anchor="middle"
+        transform="rotate(90,1375,359)">GATEWAY</text>
+
+      <line x1="1368" y1="440" x2="1368" y2="594" stroke="#21262d" stroke-width="1" />
+      <text x="1375" y="517" fill="#484f58" font-size="9" font-weight="600" letter-spacing="1.2" text-anchor="middle"
+        transform="rotate(90,1375,517)">SERVICIOS</text>
+
+      <line x1="1368" y1="610" x2="1368" y2="732" stroke="#21262d" stroke-width="1" />
+      <text x="1375" y="671" fill="#484f58" font-size="9" font-weight="600" letter-spacing="1.2" text-anchor="middle"
+        transform="rotate(90,1375,671)">DATOS</text>
+
+      <line x1="1368" y1="740" x2="1368" y2="1004" stroke="#21262d" stroke-width="1" />
+      <text x="1375" y="872" fill="#484f58" font-size="9" font-weight="600" letter-spacing="1.2" text-anchor="middle"
+        transform="rotate(90,1375,872)">INFRA</text>
+
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <!-- BOTTOM: TITLE + VERSION -->
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <line x1="34" y1="990" x2="1346" y2="990" stroke="#21262d" stroke-width="1" />
+      <text x="40" y="1007" fill="#3fb950" font-size="9" font-weight="600" letter-spacing=".5px">SOLAVIT</text>
+      <text x="122" y="1007" fill="#484f58" font-size="9" letter-spacing=".3px">«deployment diagram» · Arquitectura de
+        Microservicios Modulares · UML 2.5</text>
+      <text x="1200" y="1007" fill="#484f58" font-size="9">v1.0 · 2025</text>
+
+    </svg>
+  </div>
+
+  <div class="legend-bar">
+    <div class="leg">
+      <div class="leg-box" style="background:#3fb950;"></div> Inventory / Gateway (crítico)
+    </div>
+    <div class="leg">
+      <div class="leg-box" style="background:#a371f7;"></div> Microservicios de negocio
+    </div>
+    <div class="leg">
+      <div class="leg-box" style="background:#58a6ff;"></div> Clientes / Cloud
+    </div>
+    <div class="leg">
+      <div class="leg-box" style="background:#e3b341;"></div> Datos / Panel Operador
+    </div>
+    <div class="leg">
+      <div class="leg-box" style="background:#39c5c5;"></div> Notificaciones / Infra
+    </div>
+    <div class="leg" style="margin-left:16px;">
+      <svg width="32" height="12">
+        <line x1="0" y1="6" x2="28" y2="6" stroke="#3fb950" stroke-width="1.5" marker-end="url(#arrow-green)" />
+      </svg>
+      Comunicación HTTPS
+    </div>
+    <div class="leg">
+      <svg width="32" height="12">
+        <line x1="0" y1="6" x2="28" y2="6" stroke="#8b949e" stroke-width="1.2" stroke-dasharray="4,2" />
+      </svg>
+      Dependencia interna
+    </div>
+    <div class="leg">
+      <svg width="32" height="12">
+        <line x1="0" y1="6" x2="28" y2="6" stroke="#e3b341" stroke-width="1.2" stroke-dasharray="4,2" />
+      </svg>
+      «optional» / async
+    </div>
+  </div>
+
+</body>
+
+</html>
